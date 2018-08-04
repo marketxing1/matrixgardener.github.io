@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ma在 Github 上的个人博客">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Matrix" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        《七堂极简物理课》｜Matrix&#39;s blog
+        
+    </title>
+
+    <link rel="canonical" href="http://matrixgardener.github.io/2018/02/16/七堂极简物理课/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Matrix
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>《七堂极简物理课》</h1>
+                    
+                    <span class="meta">
+                         作者 matrixgardener
+                        <span>
+                          日期 2018-02-16
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#读书笔记"
+                           title="读书笔记">读书笔记</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            《七堂极简物理课》
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>《七堂极简物理课》</p>
+<p>第一课：最美的理论</p>
+<p>爱因斯坦 广义相对论 </p>
+<p>“牛顿试图解释物体下落和行星运转的原因。他假设在万物之间存在一种相互吸引的“力量”，他称之为“引力”。那么这个力是如何牵引两个相距甚远，中间又空无一物的物体的呢？这位伟大的现代科学之父对此显得谨慎小心，未敢大胆提出假设。牛顿想象物体是在空间中运动的，他认为空间是一个巨大的空容器，一个能装下宇宙的大盒子，也是一个硕大无朋的框架，所有物体都在其中做直线运动，直到有一个力使它们的轨道发生弯曲。至于“空间”，或者说牛顿想象的这个可以容纳世界的容器是由什么做成的，牛顿也没有给出答案。就在爱因斯坦出生前的几年，英国的两位大物理学家——法拉第（ Michael Faraday）和麦克斯韦（ James Maxwell）——为牛顿冰冷的世界添加了新鲜的内容：电磁场。所谓“电磁场”，是一种无处不在的真实存在，它可以传递无线电波，可以布满整个空间；它可以振动，也可以波动，就像起伏的湖面一样；它还可以将电力“四处传播”。爱因斯坦……很快他想到，就像电力一样，引力一定也是由一种场来传播的，一定存在一种类似于“电场”的“引力场”。他想弄明白这个“引力场”是如何运作的，以及怎样用方程对其进行描述。就在这时，他灵光一闪，想到了一个非同凡响的点子，一个百分百天才的想法：引力场不“弥漫”于空间，因为它本身就是空间。这就是广义相对论的思想。其实，牛顿的那个承载物体运动的“空间”与“引力场”是同一个东西。这是一个惊世骇俗的理论，对宇宙做了惊人的简化：空间不再是一种有别于物质的东西，而是构成世界的“物质”成分之一，一种可以波动、弯曲、变形的实体。我们不再身处一个看不见的坚硬框架里，而更像是深陷在一个巨大的容易形变的软体动物中。太阳会使其周围的空间发生弯曲，所以地球并不是在某种神秘力量的牵引下绕着太阳旋转，而是在一个倾斜的空间中行进，就好像弹珠在漏斗中滚动一样：漏斗中心并不会产生什么神秘的“力量”，是弯曲的漏斗壁使弹珠滚动的。所以无论是行星绕着太阳转，还是物体下落，都是因为空间发生了弯曲。那么我们该如何描述这种空间的弯曲呢？ 19世纪最伟大的数学家、“数学王子”卡尔·弗里德里希·高斯（ Carl Friedrich Gauss）已经写出了描述二维曲面（比如小山丘的表面）的公式。他还让自己的得意门生将这一理论推广到三维乃至更高维的曲面。这位学生就是波恩哈德·黎曼（ Bernhard Riemann），他就此问题写了一篇重量级的博士论文，但当时看起来全然无用。黎曼论文的结论是，任何一个弯曲空间的特征都可以用一个数学量来描述，如今我们称之为“黎曼曲率”，用大写的“ R”来表示。后来爱因斯坦也写了一个方程，将这个 R与物质的能量等价起来，也就是说：空间在有物质的地方会发生弯曲。就这么简单。这个方程只有半行的长度，仅此而已。空间弯曲这个观点，现在变成了一个方程。然而，这个方程中却蕴含着一个光彩夺目的宇宙。首先，这个方程描述了空间如何在恒星周围发生弯曲。由于这个弯曲，不仅行星要在轨道上绕着恒星转，就连光也发生了偏折，不再走直线。爱因斯坦预测，太阳会使光线偏折。在 1919年，这个偏折被测量出来，从而证实了他的这一预测。其实不仅是空间，时间也同样会发生弯曲。爱因斯坦曾预言，在高空中，在离太阳更近的地方，时间会过得比较快，而在低的地方，离地球近的地方时间则过得比较慢。这一预测后来也经测量得到了证实。</p>
+<p>当一个大恒星燃烧完自己所有的燃料（氢）时，它就会熄灭。残留的部分因为没有燃烧产生的热量的支撑，会因为自身的重量而坍塌，导致空间强烈弯曲，最终塌陷成一个真真正正的洞。这就是著名的“黑洞”。……整个宇宙空间可以膨胀和收缩。爱因斯坦的方程还指出，空间不可能一直保持静止，它一定是在不断膨胀的。……这个方程还预测，这个膨胀是由一个极小、极热的年轻宇宙的爆炸引发的：这就是我们所说的“宇宙大爆炸”。……但大量证据纷纷出现在我们眼前，直至在太空中观测到了“宇宙背景辐射”，也就是原始爆炸的余热里弥漫的光。事实证明，爱因斯坦方程的预言是正确的。此外，这个理论还说，空间会像海平面一样起伏，目前人们已经在宇宙中的双星上观测到了“引力波”的这种效应，与爱因斯坦理论的预言惊人一致，精确到了千亿分之一。……所有这一切都源自一个朴素的直觉，那就是，空间和引力场本是一回事。这一切也可以归结为一个简洁的方程，……”</p>
+<p>第二课 量子</p>
+<p>量子力学诞生于1900年，……德国物理学家马克思·普朗克（Max Planck）计算了一个“热匣子”内处于平衡态的电磁场。为此他用了一个巧妙的办法：假设电磁场的能量都分布在一个个“量子”上，也就是说能量是一包一包或一块一块的。用这个方法算出的结果与测量得到的数据完全吻合（所以应该算是正确的），但却与当时人们的认知背道而驰，因为人们认为能量是连续变动的，硬把它说是由一堆“碎砖块”构成的，简直是无稽之谈。</p>
+<p>对于普朗克来说，把能量视为一个个能量包块的集合只是计算上使用的一个特殊策略，就连他自己也不明白为什么这种方法会奏效。然而五年后，有事爱因斯坦，终于认识到这些“能量包”是真是存在的。</p>
+<p>爱因斯坦指出光是由成包的光粒子构成的，今天我们称之为“光子”。他在那篇文章的引言中写道：“在我看来，如果我们假设光的能量在空间中的分布是不连续的，我们就能更好地理解有关黑体辐射、荧光、紫外线产生的阴极射线，以及有关其他有关光的发射和转化的现象。依据这个假设，点光源发射出的一束光线的能量，并不会在越来越广的空间中连续分布，而是由有限数目的‘能量量子’组成，它们在空间中点状分布，作为能量发射和吸收的最小单元，能量量子不可再分。”</p>
+<p>20世纪10-20年代，丹麦人尼尔斯·波尔（Dane Niels Bohr）引领了这一理论的发展，他了解到原子核内电子的能量跟光能一样，只是特定值，而更重要的是，电子只有在特定的能量之下才能从一个原子轨道“跳跃”到另一个原子轨道上，并同时释放或吸收一个光子，这就是著名的“量子跃迁”。 </p>
+<p>1925年，量子理论的方程终于出现了，取代整个牛顿力学。</p>
+<p>率先为这个新理论列出方程的是一个非常年轻的德国天才——维尔纳·海森堡（Werner Heisenberg），他所依据的理念简直让人晕头转向。</p>
+<p>海森堡想象电子并非一只存在，只有人看到它们的时，或者更确切的说，只有和其他东西相互作用时它们才会存在。当它们与其他东西相撞时，就会以一个可计算的概率在某个地方出现。从一个轨道到另一个轨道的“量子跃迁”是它们现身的唯一方式：一个电子就是相互作用下的一连串跳跃。如果么有受到打扰，电子就没有固定的栖身之所，它甚至不会存在于一个所谓的“地方”。</p>
+<p>在量子力学中，没有一样东西拥有确定的位置，除非它撞上了别的东西。为了描述电子从一种相互作用到另一个相互作用的飞跃，就要借助一个抽象的公式，它只存在于抽象的数学空间，而不存在于真实空间。</p>
+<p>更糟的是，这些从一处到另一处的飞跃大多是随机的，不可预测的。我们无法预知一个电子再次出现会是在哪儿，只能计算它出现在这里或那里的“概率”。这个概率问题直捣物理的核心，可原本物理学的一切问题都是被那些普遍且不可改变的铁律所控制的。</p>
+<p>一个世纪过去了，我们还停在原点。量子力学的方程以及用它们得出的结果每天都被应用于物理、工程、化学、生物乃至更广阔的领域中。量子力学对于当代科技的整体发展有着至关重要的意义。没有量子力学就不会出现晶体管。然而这些方程仍然十分神秘，因为它们并不描述在一个物理系统内发生了什么，而只说明一个物理系统是如何影响另外一个物理系统的。</p>
+<p>第三课 宇宙的构造</p>
+<p>20世纪上半叶，爱因斯坦用相对论描述了空间和时间的运作方式，而波尔和他年轻的门徒们则用一系列方程捕捉到了物质奇怪的量子特性。20世纪下半叶，物理学家们在此基础上，把这两个新理论广泛应用在了自然界的各个领域：从宏观世界的宇宙构造，到微观世界的基本粒子。</p>
+<p>哥白尼的日心说</p>
+<p>太阳系只是不计其数的星系中的一个，而我们的太阳也只是众多恒星中普普通通的一颗，是浩瀚银河系星云中的沧海一粟。</p>
+<p>但是在20世纪30年代，天文学家对星云（恒星之间近乎白色的云团）进行精确的测量后发现，银河系本身也只是众多星系间浩瀚星云中的一粒尘埃。这些星系一只蔓延到我们最强大的天文望远镜也看不到的地方。</p>
+<p>这片均匀无边的宇宙并不像看上去那么简单。就像我在第一节课中解释过的那样，空间不是一马平川，而是弯曲的。宇宙布满了星系，所以我们想象它的纹理会像海浪一样起伏，激烈处还会产生黑洞空穴。</p>
+<p>我们今天终于知道，这个布满星系、富有弹性的浩瀚宇宙是大约150亿年前由一个极热极密的小星云演化来的。</p>
+<p>宇宙的诞生的时候就像一个小球，大爆炸后一直膨胀到它现在的规模。这就是我们现在对宇宙最大程度的了解了。</p>
+<p>第四课 粒子</p>
+<p>我们身边所有物体都是由电子、夸克、光子和胶子组成的。它们就是粒子物理学中所讲的“基本粒子”。除此之外还有几种粒子，例如中微子（neutrino）——它布满整个宇宙，但并不跟我们发生交互作用，还有希格斯玻色子（Higgs boson）——不久前日内瓦欧洲核子研究中心的大型强子对撞机发现的粒子。但这些粒子并不多，只有不到十种。这些少量的基本原料，如同大型乐高玩具中的小积木，靠它们建造出了我们身边的整个物质世界。</p>
+<p>量子力学描述了这些粒子的性质和运动方式。这些粒子当然并不像小石子那般真实可感，而是相应的场的“量子”，比方说光子是电磁场的“量子”。就跟在法拉第和麦克斯韦的电磁场中一样，它们是这些变化的基底场的元激发，是极小的移动的波包。它们的消失和重现遵循量子力学的奇特定律：存在的每样东西都是不稳定的，永远都在从一种相互作用跃迁到另一种相互作用。</p>
+<p>即使我们观察的是空间中一块没有原子的区域，还是可以探测到粒子的微小涌动。彻底的虚空是不存在，就像最平静的海面，我们凑近看还是会发现细微的波动和振荡。构成世界的各种场也会轻微的波动起伏，我们可以想象，组成世界的基本粒子在这样的波动中不断产生、消失。</p>
+<p>这就是量子力学和粒子理论描述的世界。这同牛顿和拉普拉斯（Laplace）的世界相去甚远：在那里，冰冷的小石子在不变的集合空间里沿着精确而漫长的轨迹永恒不变地运动着。量子力学和粒子试验告诉我们，世界是物体连续、永不停歇的涌动，是稍纵即逝的实体不断出现和消失，是一系列的振荡，就像20世界60年代时髦的嬉皮时代，一个由事件而非物体构成的世界。</p>
+<p>第五课 空间的颗粒</p>
+<p>“圈量子引力”试图将广义相对论和量子力学统一起来。</p>
+<p>它的中心思想很简单。广义相对论告诉我们空间不是一个静止的盒子，而是在不断运动，像一个移动中的巨大软体动物，可以压缩和扭曲，而我们被包在里面。另一方面，量子力学告诉我们，所有这样的场都“由量子构成”，具有精细的颗粒状结构。于是物理空间当然也是“由量子构成的”。</p>
+<p>这正是圈量子引力的核心结论：空间是不连续的，不可被无限分割，而是由细小的颗粒，或者说“空间原子”构成。这些颗粒极其微小，比最小的原子核还要小几亿亿倍。圈量子引力用数学形式描述了这些“空间原子”，也给出了它们演化的方程。它们被称为“圈”或环，因为它们环环相扣，形成了一个相互关联的网络，从而编制出空间的纹理，就像细密织成的巨大锁子甲上的小铁圈一样。</p>
+<p>第六课 概率、时间和黑洞的热</p>
+<p>英国物理学家麦克斯韦和奥地利物理学家玻尔兹曼（Ludwig Boltzmann）发现了热的本质。</p>
+<p>玻尔兹曼发现其中的原因惊人的简单：这完全是随机的。玻尔兹曼的解释非常精妙，用到了概率的概念。热量从热的物体跑到冷的物体并非遵循什么绝对的定律，只是这种情况发生的概率比较大而已。原因在于：从统计学的角度看，一个快速运动的热物体的原子更有可能撞上一个冷物体的原子，传递给它一部分能量；而相反过程发生的概率则很小。在碰撞的过程中能量是是守恒的，但当发生大量偶然碰撞时，能量倾向于平均分布。就这样，相互接触的物体温度趋向于相同。热的物体和冷的物体接触后温度不降反升的情况并非不可能，只是概率小的可怜罢了。</p>
+<p>尾声 我们</p>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/07/30/hello-world/" data-toggle="tooltip" data-placement="top"
+                           title="Hello World">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/04/25/New test/" data-toggle="tooltip" data-placement="top"
+                           title="New test1">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#读书笔记"
+                           title="读书笔记">读书笔记</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/matrixgardener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/matrixgardener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Matrix 2018
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://matrixgardener.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- 动态背景 -->
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>
