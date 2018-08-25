@@ -3,7 +3,7 @@
 
 <!-- Head tag -->
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="ma在 Github 上的个人博客">
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="/css/blog-style.css">
 
     <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/syntax.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <style>
@@ -42,7 +42,7 @@
 </style>
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
-<!-- Navigation -->
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
@@ -172,95 +172,129 @@
 <h1 id="机器学习：机器学习的数学基础"><a href="#机器学习：机器学习的数学基础" class="headerlink" title="机器学习：机器学习的数学基础"></a>机器学习：机器学习的数学基础</h1><h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>机器学习的特点就是：以计算机为工具和平台，以数据为研究对象，以学习方法为中心；<br>是概率论、线性代数、数值计算、信息论、最优化理论和计算机科学等多个领域的交叉学科。</p>
 <h2 id="二、线性代数"><a href="#二、线性代数" class="headerlink" title="二、线性代数"></a>二、线性代数</h2><h3 id="2-1-标量"><a href="#2-1-标量" class="headerlink" title="2.1 标量"></a>2.1 标量</h3><p>一个标量就是一个单独的数，一般用小写的的变量名称表示。</p>
 <h3 id="2-2-向量"><a href="#2-2-向量" class="headerlink" title="2.2 向量"></a>2.2 向量</h3><p>一个向量就是一列数，这些数是有序排列的。用过次序中的索引，我们可以确定每个单独的数。通常会赋予向量粗体的小写名称。当我们需要明确表示向量中的元素时，我们会将元素排列成一个方括号包围的纵柱：</p>
-<p>$$<br>X=<br>\begin{bmatrix}<br>x_1\<br>x_2\<br>\vdots\<br>x_n<br>\end{bmatrix}\quad<br>$$</p>
-<p>我们可以把向量看作空间中的点，每个元素是不同的坐标轴上的坐标。 </p>
+<script type="math/tex; mode=display">
+X=
+\begin{bmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{bmatrix}\quad</script><p>我们可以把向量看作空间中的点，每个元素是不同的坐标轴上的坐标。 </p>
 <h3 id="2-3-矩阵"><a href="#2-3-矩阵" class="headerlink" title="2.3 矩阵"></a>2.3 矩阵</h3><p>矩阵是二维数组，其中的每一个元素被两个索引而非一个所确定。我们通常会赋予矩阵粗体的大写变量名称，比如$A$。如果一个实数矩阵高度为$m$，宽度为$n$，那么我们说$A\epsilon R^{m\times n}$。</p>
-<p>$$<br>A=<br>\begin{bmatrix}<br>a_{11} &amp; a_{12} &amp; \dots &amp; a_{1n}\<br>a_{21} &amp; a_{22} &amp; \dots &amp; a_{2n}\<br>\vdots &amp; \vdots &amp;  &amp; \dots\<br>a_{m1} &amp; a_{m2} &amp; \dots &amp; a_{mn}<br>\end{bmatrix}\quad<br>$$</p>
-<p>矩阵这东西在机器学习中就不要太重要了！实际上，如果我们现在有$N$个用户的数据，每条数据含有$M$个特征，那其实它对应的就是一个$N<em>M$的矩阵呀；再比如，一张图由$16</em>16$的像素点组成，那这就是一个$16*16$的矩阵了。</p>
+<script type="math/tex; mode=display">
+A=
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1n}\\
+a_{21} & a_{22} & \dots & a_{2n}\\
+\vdots & \vdots &  & \dots\\
+a_{m1} & a_{m2} & \dots & a_{mn}
+\end{bmatrix}\quad</script><p>矩阵这东西在机器学习中就不要太重要了！实际上，如果我们现在有$N$个用户的数据，每条数据含有$M$个特征，那其实它对应的就是一个$N<em>M$的矩阵呀；再比如，一张图由$16</em>16$的像素点组成，那这就是一个$16*16$的矩阵了。</p>
 <h3 id="2-4-张量"><a href="#2-4-张量" class="headerlink" title="2.4 张量"></a>2.4 张量</h3><p>几何代数中定义的张量是基于向量和矩阵的推广，通俗一点理解的话，我们可以将标量视为零阶张量，矢量视为一阶张量，那么矩阵就是二阶张量。</p>
 <p>例如，可以将任意一张彩色图片表示成一个三阶张量，三个维度分别是图片的高度、宽度和色彩数据。将这张图用张量表示出来，就是最下方的那张表格：</p>
 <p><img src="https://pic4.zhimg.com/v2-c0c16793d4662bfcdd7e112030096f94_r.jpg" alt=""></p>
 <p>其中表的横轴表示图片的宽度值，这里只截取$0-319$；表的纵轴表示图片的高度值，这里只截取$0-4$；表格中每个方格代表一个像素点，比如第一行第一列的表格数据为$[1.0,1.0,1.0]$，代表的就是$RGB$三原色在图片的这个位置的取值情况（即$R=1.0$，$G=1.0$，$B=1.0$）。</p>
 <p>当然我们还可以将这一定义继续扩展，即：我们可以用四阶张量表示一个包含多张图片的数据集，这四个维度分别是：图片在数据集中的编号，图片高度、宽度，以及色彩数据。</p>
 <p>张量在深度学习中是一个很重要的概念，因为它是一个深度学习框架中的一个核心组件，后续的所有运算和优化算法几乎都是基于张量进行的。</p>
-<h3 id="2-5-范数"><a href="#2-5-范数" class="headerlink" title="2-5 范数"></a>2-5 范数</h3><p>有时我们需要衡量一个向量的大小。在机器学习中，我们经常使用被称为范数$(norm)$的函数衡量矩阵大小。$L_p$范数如下：<br>$$<br>\left| \left| x \right| \right| <em>{p}^{} =\left( \sum</em>{i}^{}{\left| x_{i} \right| ^{p} } \right) _{}^{\frac{1}{p} }<br>$$<br>所以：</p>
-<p>$L_1$范数$\ \left| \left| x \right| \right|$：为$x$向量各个元素绝对值之和；</p>
-<p>$L_2$范数$\ \left| \left| x \right| \right| _{2}$：为$x$向量各个元素平方和的开方。</p>
-<p>这里先说明一下，在机器学习中，$\ L_1$范数和$\ L_2$范数很常见，主要用在损失函数中起到一个限制模型参数复杂度的作用，至于为什么要限制模型的复杂度，这又涉及到机器学习中常见的过拟合问题。具体的概念在后续文章中会有详细的说明和推导，大家先记住：这个东西很重要，实际中经常会涉及到，面试中也常会被问到！！！</p>
+<h3 id="2-5-范数"><a href="#2-5-范数" class="headerlink" title="2-5 范数"></a>2-5 范数</h3><p>有时我们需要衡量一个向量的大小。在机器学习中，我们经常使用被称为范数$(norm)$的函数衡量矩阵大小。$L_p$范数如下：</p>
+<script type="math/tex; mode=display">
+\left| \left| x \right| \right| _{p}^{} =\left( \sum_{i}^{}{\left| x_{i} \right| ^{p} } \right) _{}^{\frac{1}{p} }</script><p>所以：</p>
+<p>$L_1$范数$ \left| \left| x \right| \right|$：为$x$向量各个元素绝对值之和；</p>
+<p>$L<em>2$范数$ \left| \left| x \right| \right| </em>{2}$：为$x$向量各个元素平方和的开方。</p>
+<p>这里先说明一下，在机器学习中，$ L_1$范数和$ L_2$范数很常见，主要用在损失函数中起到一个限制模型参数复杂度的作用，至于为什么要限制模型的复杂度，这又涉及到机器学习中常见的过拟合问题。具体的概念在后续文章中会有详细的说明和推导，大家先记住：这个东西很重要，实际中经常会涉及到，面试中也常会被问到！！！</p>
 <h3 id="2-6-特征分解"><a href="#2-6-特征分解" class="headerlink" title="2.6 特征分解"></a>2.6 特征分解</h3><p>许多数学对象可以通过将它们分解成多个组成部分。特征分解是使用最广的矩阵分解之一，即将矩阵分解成一组特征向量和特征值。</p>
-<p>方阵$\ A$的特征向量是指与$\ A$相乘后相当于对该向量进行缩放的非零向量$\ \nu$ ：</p>
-<p>$$A\nu =\lambda \nu $$</p>
-<p>标量$\lambda$被称为这个特征向量对应的特征值。 </p>
-<p>使用特征分解去分析矩阵$\ A$时，得到特征向量构成的矩阵$\ V$和特征值构成的向量$\lambda$，我们可以重新将A写作：</p>
-<p>$$A=Vdiag\left( \lambda \right) V^{-1} $$</p>
-<h3 id="2-7-奇异值分解（Singular-Value-Decomposition，SVD）"><a href="#2-7-奇异值分解（Singular-Value-Decomposition，SVD）" class="headerlink" title="2-7 奇异值分解（Singular Value Decomposition，SVD）"></a>2-7 奇异值分解（Singular Value Decomposition，SVD）</h3><p>矩阵的特征分解是有前提条件的，那就是只有对可对角化的矩阵才可以进行特征分解。但实际中很多矩阵往往不满足这一条件，甚至很多矩阵都不是方阵，就是说连矩阵行和列的数目都不相等。这时候怎么办呢？人们将矩阵的特征分解进行推广，得到了一种叫作“矩阵的奇异值分解”的方法，简称$\ SVD$。通过奇异分解，我们会得到一些类似于特征分解的信息。</p>
-<p>它的具体做法是将一个普通矩阵分解为奇异向量和奇异值。比如将矩阵$\ A$分解成三个矩阵的乘积：</p>
-<p>$$A=UDV^{T} $$</p>
-<p>假设<strong>$\ A$是一个$m\times n$矩阵，那么$\ U$是一个$m\times m$矩阵，$D$是一个$m\times n$矩阵，$V$是一个$n\times n$矩阵</strong>。</p>
+<p>方阵$ A$的特征向量是指与$ A$相乘后相当于对该向量进行缩放的非零向量$ \nu$ ：</p>
+<script type="math/tex; mode=display">A\nu =\lambda \nu</script><p>标量$\lambda$被称为这个特征向量对应的特征值。 </p>
+<p>使用特征分解去分析矩阵$ A$时，得到特征向量构成的矩阵$ V$和特征值构成的向量$\lambda$，我们可以重新将A写作：</p>
+<script type="math/tex; mode=display">A=Vdiag\left( \lambda \right) V^{-1}</script><h3 id="2-7-奇异值分解（Singular-Value-Decomposition，SVD）"><a href="#2-7-奇异值分解（Singular-Value-Decomposition，SVD）" class="headerlink" title="2-7 奇异值分解（Singular Value Decomposition，SVD）"></a>2-7 奇异值分解（Singular Value Decomposition，SVD）</h3><p>矩阵的特征分解是有前提条件的，那就是只有对可对角化的矩阵才可以进行特征分解。但实际中很多矩阵往往不满足这一条件，甚至很多矩阵都不是方阵，就是说连矩阵行和列的数目都不相等。这时候怎么办呢？人们将矩阵的特征分解进行推广，得到了一种叫作“矩阵的奇异值分解”的方法，简称$ SVD$。通过奇异分解，我们会得到一些类似于特征分解的信息。</p>
+<p>它的具体做法是将一个普通矩阵分解为奇异向量和奇异值。比如将矩阵$ A$分解成三个矩阵的乘积：</p>
+<script type="math/tex; mode=display">A=UDV^{T}</script><p>假设<strong>$ A$是一个$m\times n$矩阵，那么$ U$是一个$m\times m$矩阵，$D$是一个$m\times n$矩阵，$V$是一个$n\times n$矩阵</strong>。</p>
 <p>这些矩阵每一个都拥有特殊的结构，其中$U$和$V$都是正交矩阵，$D$是对角矩阵（注意，$D$不一定是方阵）。对角矩阵$D$对角线上的元素被称为矩阵$A$的奇异值。矩阵$U$的列向量被称为<strong>左奇异向量</strong>，矩阵$V$的列向量被称<strong>右奇异向量</strong>。</p>
 <p>$SVD$最有用的一个性质可能是拓展矩阵求逆到非方矩阵上。另外，$SVD$可用于推荐系统中。</p>
 <h3 id="2-8-Moore-Penrose伪逆"><a href="#2-8-Moore-Penrose伪逆" class="headerlink" title="2-8 Moore-Penrose伪逆"></a>2-8 Moore-Penrose伪逆</h3><p>对于非方矩阵而言，其逆矩阵没有定义。假设在下面问题中，我们想通过矩阵$A$的左逆$B$来求解线性方程：</p>
-<p>$$Ax=y$$</p>
-<p>等式两边同时左乘左逆$B$后，得到：</p>
-<p>$$x=By$$</p>
-<p>是否存在唯一的映射将$A$映射到$B$取决于问题的形式。</p>
+<script type="math/tex; mode=display">Ax=y</script><p>等式两边同时左乘左逆$B$后，得到：</p>
+<script type="math/tex; mode=display">x=By</script><p>是否存在唯一的映射将$A$映射到$B$取决于问题的形式。</p>
 <p>如果矩阵$A$的行数大于列数，那么上述方程可能没有解；如果矩阵$A$的行数小于列数，那么上述方程可能有多个解。</p>
 <p>$Moore-Penrose$伪逆使我们能够解决这种情况，矩阵$A$的伪逆定义为：</p>
-<p>$$A^+=\lim_{a\rightarrow{0}}(A^T{A}+\alpha{I}^{-1})A^T$$</p>
-<p>但是计算伪逆的实际算法没有基于这个式子，而是使用下面的公式：</p>
-<p>$$A^+=VD^+{U}^T$$</p>
-<p>其中，矩阵$U$，$D$和$V$是矩阵$A$奇异值分解后得到的矩阵。对角矩阵$D$的伪逆$D^+$是其非零元素取倒之后再转置得到的。</p>
+<script type="math/tex; mode=display">A^+=\lim_{a\rightarrow{0}}(A^T{A}+\alpha{I}^{-1})A^T</script><p>但是计算伪逆的实际算法没有基于这个式子，而是使用下面的公式：</p>
+<script type="math/tex; mode=display">A^+=VD^+{U}^T</script><p>其中，矩阵$U$，$D$和$V$是矩阵$A$奇异值分解后得到的矩阵。对角矩阵$D$的伪逆$D^+$是其非零元素取倒之后再转置得到的。</p>
 <h3 id="2-9-几种常用的距离"><a href="#2-9-几种常用的距离" class="headerlink" title="2-9 几种常用的距离"></a>2-9 几种常用的距离</h3><p>上面大致说过， 在机器学习里，我们的运算一般都是基于向量的，一条用户具有$100$个特征，那么他对应的就是一个$100$维的向量，通过计算两个用户对应向量之间的距离值大小，有时候能反映出这两个用户的相似程度。这在后面的$KNN$算法和$K-means$算法中很明显。</p>
-<p>设有两个$n$维变量$A=\left[ x_{11}, x_{12},…,x_{1n} \right]$和$B=\left[ x_{21} ,x_{22} ,…,x_{2n} \right]$，则一些常用的距离公式定义如下：</p>
+<p>设有两个$n$维变量$A=\left[ x<em>{11}, x</em>{12},…,x<em>{1n} \right]$和$B=\left[ x</em>{21} ,x<em>{22} ,…,x</em>{2n} \right]$，则一些常用的距离公式定义如下：</p>
 <h4 id="1、曼哈顿距离"><a href="#1、曼哈顿距离" class="headerlink" title="1、曼哈顿距离"></a>1、曼哈顿距离</h4><p>曼哈顿距离也称为城市街区距离，数学定义如下：</p>
-<p>$$d_{12} =\sum_{k=1}^{n}{\left| x_{1k}-x_{2k} \right| } $$</p>
-<p>曼哈顿距离的$Python$实现：</p>
+<script type="math/tex; mode=display">d_{12} =\sum_{k=1}^{n}{\left| x_{1k}-x_{2k} \right| }</script><p>曼哈顿距离的$Python$实现：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *  </span><br><span class="line">vector1 = mat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])  </span><br><span class="line">vector2 = mat([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])  </span><br><span class="line"><span class="keyword">print</span> sum(abs(vector1-vector2))</span><br></pre></td></tr></table></figure>
 <h4 id="2、欧氏距离"><a href="#2、欧氏距离" class="headerlink" title="2、欧氏距离"></a>2、欧氏距离</h4><p>欧氏距离其实就是$L_2$范数，数学定义如下： </p>
-<p>$$d_{12} =\sqrt{\sum_{k=1}^{n}{\left( x_{1k} -x_{2k} \right) ^{2} } } $$</p>
-<p>欧氏距离的$Python$实现：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line">vector1 = mat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">vector2 = mat([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line"><span class="keyword">print</span> sqrt((vector1-vector2)*(vector1-vector2).T)</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">d_{12} =\sqrt{\sum_{k=1}^{n}{\left( x_{1k} -x_{2k} \right) ^{2} } }</script><p>欧氏距离的$Python$实现：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line">vector1 = mat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">vector2 = mat([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line"><span class="keyword">print</span> sqrt((vector1-vector2)*(vector1-vector2).T)</span><br></pre></td></tr></table></figure></p>
 <h4 id="3、闵可夫斯基距离"><a href="#3、闵可夫斯基距离" class="headerlink" title="3、闵可夫斯基距离"></a>3、闵可夫斯基距离</h4><p>从严格意义上讲，闵可夫斯基距离不是一种距离，而是一组距离的定义：</p>
-<p>$$d_{12} =\sqrt[p]{\sum_{k=1}^{n}{\left( x_{1k} -x_{2k} \right) ^{p} } } $$</p>
-<p>实际上，当$p=1$时，就是曼哈顿距离；当$p=2$时，就是欧式距离。</p>
+<script type="math/tex; mode=display">d_{12} =\sqrt[p]{\sum_{k=1}^{n}{\left( x_{1k} -x_{2k} \right) ^{p} } }</script><p>实际上，当$p=1$时，就是曼哈顿距离；当$p=2$时，就是欧式距离。</p>
 <h4 id="4、切比雪夫距离"><a href="#4、切比雪夫距离" class="headerlink" title="4、切比雪夫距离"></a>4、切比雪夫距离</h4><p>切比雪夫距离就是$L_{\varpi}$，即无穷范数，数学表达式如下：</p>
-<p>$$d_{12} =max\left( \left| x_{1k}-x_{2k} \right| \right) $$</p>
-<p>切比雪夫距离额Python实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line">vector1 = mat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">vector2 = mat([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line"><span class="keyword">print</span> sqrt(abs(vector1-vector2).max)</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">d_{12} =max\left( \left| x_{1k}-x_{2k} \right| \right)</script><p>切比雪夫距离额Python实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line">vector1 = mat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">vector2 = mat([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line"><span class="keyword">print</span> sqrt(abs(vector1-vector2).max)</span><br></pre></td></tr></table></figure></p>
 <h4 id="5、夹角余弦"><a href="#5、夹角余弦" class="headerlink" title="5、夹角余弦"></a>5、夹角余弦</h4><p>夹角余弦的取值范围为$[-1,1]$，可以用来衡量两个向量方向的差异；夹角余弦越大，表示两个向量的夹角越小；当两个向量的方向重合时，夹角余弦取最大值$1$；当两个向量的方向完全相反时，夹角余弦取最小值$-1$。</p>
-<p>机器学习中用这一概念来衡量样本向量之间的差异，其数学表达式如下：<br>$$<br>cos\theta =\frac{AB}{\left| A \right| \left|B \right| } =\frac{\sum_{k=1}^{n}{x_{1k}x_{2k} } }{\sqrt{\sum_{k=1}^{n}{x_{1k}^{2} } } \sqrt{\sum_{k=1}^{n}{x_{2k}^{2} } } }<br>$$</p>
-<p>夹角余弦的Python实现：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line">vector1 = mat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">vector2 = mat([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line"><span class="keyword">print</span> dot(vector1,vector2)/(linalg.norm(vector1)*linalg.norm(vector2))</span><br></pre></td></tr></table></figure></p>
+<p>机器学习中用这一概念来衡量样本向量之间的差异，其数学表达式如下：</p>
+<script type="math/tex; mode=display">
+cos\theta =\frac{AB}{\left| A \right| \left|B \right| } =\frac{\sum_{k=1}^{n}{x_{1k}x_{2k} } }{\sqrt{\sum_{k=1}^{n}{x_{1k}^{2} } } \sqrt{\sum_{k=1}^{n}{x_{2k}^{2} } } }</script><p>夹角余弦的Python实现：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line">vector1 = mat([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">vector2 = mat([<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>])</span><br><span class="line"><span class="keyword">print</span> dot(vector1,vector2)/(linalg.norm(vector1)*linalg.norm(vector2))</span><br></pre></td></tr></table></figure></p>
 <h4 id="6、汉明距离"><a href="#6、汉明距离" class="headerlink" title="6、汉明距离"></a>6、汉明距离</h4><p>汉明距离定义的是两个字符串中不相同位数的数目。</p>
 <p>例如：字符串$’1111’$与$’1001’$之间的汉明距离为$2$。</p>
 <p>信息编码中一般应使得编码间的汉明距离尽可能的小。</p>
 <p>汉明距离的Python实现：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line">matV = mat([<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line">smstr = nonzero(matV[<span class="number">0</span>]-matV[<span class="number">1</span>])</span><br><span class="line"><span class="keyword">print</span> smstr</span><br></pre></td></tr></table></figure></p>
-<h4 id="7、杰卡德相似系数"><a href="#7、杰卡德相似系数" class="headerlink" title="7、杰卡德相似系数"></a>7、杰卡德相似系数</h4><p>两个集合A和B的交集元素在A和B的并集中所占的比例称为两个集合的杰卡德相似系数，用符号$J(A,B)$表示，数学表达式为：<br>$$<br>J\left( A,B \right) =\frac{\left| A\cap B\right| }{\left|A\cup B \right| }<br>$$</p>
-<p>杰卡德相似系数是衡量两个集合的相似度的一种指标。一般可以将其用在衡量样本的相似度上。</p>
-<h4 id="8、杰卡德距离"><a href="#8、杰卡德距离" class="headerlink" title="8、杰卡德距离"></a>8、杰卡德距离</h4><p>与杰卡德相似系数相反的概念是杰卡德距离，其定义式为：<br>$$<br>J_{\sigma} =1-J\left( A,B \right) =\frac{\left| A\cup B \right| -\left| A\cap B \right| }{\left| A\cup B \right| }<br>$$<br>杰卡德距离的Python实现：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> scipy.spatial.distance <span class="keyword">as</span> dist</span><br><span class="line">matV = mat([<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"><span class="keyword">print</span> dist.pdist(matV,<span class="string">'jaccard'</span>)</span><br></pre></td></tr></table></figure></p>
+<h4 id="7、杰卡德相似系数"><a href="#7、杰卡德相似系数" class="headerlink" title="7、杰卡德相似系数"></a>7、杰卡德相似系数</h4><p>两个集合A和B的交集元素在A和B的并集中所占的比例称为两个集合的杰卡德相似系数，用符号$J(A,B)$表示，数学表达式为：</p>
+<script type="math/tex; mode=display">
+J\left( A,B \right) =\frac{\left| A\cap B\right| }{\left|A\cup B \right| }</script><p>杰卡德相似系数是衡量两个集合的相似度的一种指标。一般可以将其用在衡量样本的相似度上。</p>
+<h4 id="8、杰卡德距离"><a href="#8、杰卡德距离" class="headerlink" title="8、杰卡德距离"></a>8、杰卡德距离</h4><p>与杰卡德相似系数相反的概念是杰卡德距离，其定义式为：</p>
+<script type="math/tex; mode=display">
+J_{\sigma} =1-J\left( A,B \right) =\frac{\left| A\cup B \right| -\left| A\cap B \right| }{\left| A\cup B \right| }</script><p>杰卡德距离的Python实现：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> scipy.spatial.distance <span class="keyword">as</span> dist</span><br><span class="line">matV = mat([<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"><span class="keyword">print</span> dist.pdist(matV,<span class="string">'jaccard'</span>)</span><br></pre></td></tr></table></figure></p>
 <h2 id="三、概率"><a href="#三、概率" class="headerlink" title="三、概率"></a>三、概率</h2><h3 id="3-1-为什么使用概率？"><a href="#3-1-为什么使用概率？" class="headerlink" title="3.1 为什么使用概率？"></a>3.1 为什么使用概率？</h3><p>概率论是用于表示不确定性陈述的数学框架，即它是对事物不确定性的度量。</p>
 <p>在人工智能领域，我们主要以两种方式来使用概率论。首先，概率法则告诉我们AI系统应该如何推理，所以我们设计一些算法来计算或者近似由概率论导出的表达式。其次，我们可以用概率和统计从理论上分析我们提出的AI系统的行为。</p>
 <p>计算机科学的许多分支处理的对象都是完全确定的实体，但机器学习却大量使用概率论。实际上如果你了解机器学习的工作原理你就会觉得这个很正常。因为机器学习大部分时候处理的都是不确定量或随机量。</p>
-<h4 id="3-2-随机变量"><a href="#3-2-随机变量" class="headerlink" title="3.2 随机变量"></a>3.2 随机变量</h4><p>随机变量可以随机地取不同值的变量。我们通常用小写字母来表示随机变量本身，而用带数字下标的小写字母来表示随机变量能够取到的值。例如，x_{1}  和x_{2}  都是随机变量X可能的取值。</p>
+<h4 id="3-2-随机变量"><a href="#3-2-随机变量" class="headerlink" title="3.2 随机变量"></a>3.2 随机变量</h4><p>随机变量可以随机地取不同值的变量。我们通常用小写字母来表示随机变量本身，而用带数字下标的小写字母来表示随机变量能够取到的值。例如，x<em>{1}  和x</em>{2}  都是随机变量X可能的取值。</p>
 <p>对于向量值变量，我们会将随机变量写成X，它的一个值为x。就其本身而言，一个随机变量只是对可能的状态的描述；它必须伴随着一个概率分布来指定每个状态的可能性。</p>
 <p>随机变量可以是离散的或者连续的。</p>
 <h4 id="3-3-概率分布"><a href="#3-3-概率分布" class="headerlink" title="3.3 概率分布"></a>3.3 概率分布</h4><p>给定某随机变量的取值范围，概率分布就是导致该随机事件出现的可能性。</p>
 <p>从机器学习的角度来看，概率分布就是符合随机变量取值范围的某个对象属于某个类别或服从某种趋势的可能性。</p>
 <h4 id="3-4-条件概率"><a href="#3-4-条件概率" class="headerlink" title="3.4 条件概率"></a>3.4 条件概率</h4><p>很多情况下，我们感兴趣的是某个事件在给定其它事件发生时出现的概率，这种概率叫条件概率。</p>
 <p>我们将给定$X=x$时$Y=y$发生的概率记为$P\left( Y=y|X=x \right)$，这个概率可以通过下面的公式来计算：</p>
-<p>$$P\left( Y=y|X=x \right) =\frac{P\left( Y=y,X=x \right) }{P\left( X=x \right) }$$</p>
-<h4 id="3-5-贝叶斯公式"><a href="#3-5-贝叶斯公式" class="headerlink" title="3.5 贝叶斯公式"></a>3.5 贝叶斯公式</h4><p>先看看什么是“先验概率”和“后验概率”，以一个例子来说明：</p>
+<script type="math/tex; mode=display">P\left( Y=y|X=x \right) =\frac{P\left( Y=y,X=x \right) }{P\left( X=x \right) }</script><h4 id="3-5-贝叶斯公式"><a href="#3-5-贝叶斯公式" class="headerlink" title="3.5 贝叶斯公式"></a>3.5 贝叶斯公式</h4><p>先看看什么是“先验概率”和“后验概率”，以一个例子来说明：</p>
 <p>假设某种病在人群中的发病率是$0.001$，即$1000$人中大概会有$1$个人得病，则有：$P(患病) = 0.1\%$；即：在没有做检验之前，我们预计的患病率为$P(患病)=0.1\%$，这个就叫作”先验概率”。 </p>
 <p>再假设现在有一种该病的检测方法，其检测的准确率为$95\%$；即：如果真的得了这种病，该检测法有$95\%$的概率会检测出阳性，但也有5%的概率检测出阴性；或者反过来说，但如果没有得病，采用该方法有$95\%$的概率检测出阴性，但也有$5\%$的概率检测为阳性。用概率条件概率表示即为：$P(显示阳性|患病)=95\%$。</p>
 <p>现在我们想知道的是：在做完检测显示为阳性后，某人的患病率$P(患病|显示阳性)$，这个其实就称为”后验概率”。</p>
 <p>而这个叫贝叶斯的人其实就是为我们提供了一种可以利用先验概率计算后验概率的方法，我们将其称为“贝叶斯公式”。</p>
-<p>这里先了解<strong>条件概率公式</strong>：<br>$$<br>P\left( B|A \right)=\frac{P\left( AB \right)}{P\left( A \right)} , P\left( A|B \right)=\frac{P\left( AB \right)}{P\left( B \right)}<br>$$<br>由条件概率可以得到<strong>乘法公式</strong>：<br>$$<br>P\left( AB \right)=P\left( B|A \right)P\left( A \right)=P\left( A|B \right)P\left( B \right)<br>$$<br>将条件概率公式和乘法公式结合可以得到：<br>$$<br>P\left( B|A \right)=\frac{P\left( A|B \right)\cdot P\left( B \right)}{P\left( A \right)}<br>$$<br>再由<strong>全概率公式</strong>：<br>$$<br>P\left( A \right)=\sum_{i=1}^{N}{P\left( A|B_{i} \right) \cdot P\left( B_{i}\right)}<br>$$<br>代入可以得到<strong>贝叶斯公式</strong>：<br>$$<br>P\left( B_{i}|A \right)=\frac{P\left( A|B_{i} \right)\cdot P\left( B_{i} \right)}{\sum_{i=1}^{N}{P\left( A|B_{i} \right) \cdot P\left( B_{i}\right)} }<br>$$<br>在这个例子里就是：<br>$$<br>\begin{aligned} % requires amsmath; align<em> for no eq. number<br>p(患病|显示阳性) &amp; =\frac{P(显示阳性|患病)P(患病)}{P(显示阳性)}\<br>                &amp; =\frac{P(显示阳性|患病)P(患病)}{P(显示阳性|患病)P(患病)+{P(显示阳性|无病)P(无病)}}\<br>                &amp; =\frac{95\%</em>0.1\%}{95\%<em>0.1\%+5\%</em>99.9\%}=1.86\%<br>\end{aligned}<br>$$<br>贝叶斯公式贯穿了机器学习中随机问题分析的全过程。从文本分类到概率图模型，其基本分类都是贝叶斯公式。</p>
+<p>这里先了解<strong>条件概率公式</strong>：</p>
+<script type="math/tex; mode=display">
+P\left( B|A \right)=\frac{P\left( AB \right)}{P\left( A \right)} , P\left( A|B \right)=\frac{P\left( AB \right)}{P\left( B \right)}</script><p>由条件概率可以得到<strong>乘法公式</strong>：  </p>
+<script type="math/tex; mode=display">
+P\left( AB \right)=P\left( B|A \right)P\left( A \right)=P\left( A|B \right)P\left( B \right)</script><p>将条件概率公式和乘法公式结合可以得到：</p>
+<script type="math/tex; mode=display">
+P\left( B|A \right)=\frac{P\left( A|B \right)\cdot P\left( B \right)}{P\left( A \right)}</script><p>再由<strong>全概率公式</strong>：</p>
+<script type="math/tex; mode=display">
+P\left( A \right)=\sum_{i=1}^{N}{P\left( A|B_{i} \right) \cdot P\left( B_{i}\right)}</script><p>代入可以得到<strong>贝叶斯公式</strong>：</p>
+<script type="math/tex; mode=display">
+P\left( B_{i}|A \right)=\frac{P\left( A|B_{i} \right)\cdot P\left( B_{i} \right)}{\sum_{i=1}^{N}{P\left( A|B_{i} \right) \cdot P\left( B_{i}\right)} }</script><p>在这个例子里就是：</p>
+<script type="math/tex; mode=display">
+\begin{aligned} % requires amsmath; align* for no eq. number
+p(患病|显示阳性) & =\frac{P(显示阳性|患病)P(患病)}{P(显示阳性)}\\
+                & =\frac{P(显示阳性|患病)P(患病)}{P(显示阳性|患病)P(患病)+{P(显示阳性|无病)P(无病)}}\\
+                & =\frac{95\%*0.1\%}{95\%*0.1\%+5\%*99.9\%}=1.86\%
+\end{aligned}</script><p>贝叶斯公式贯穿了机器学习中随机问题分析的全过程。从文本分类到概率图模型，其基本分类都是贝叶斯公式。</p>
 <p>期望、方差、协方差等主要反映数据的统计特征，机器学习的一个很大应用就是数据挖掘等，因此这些基本的统计概念也是很有必要掌握。另外，像后面的EM算法中，就需要用到期望的相关概念和性质。</p>
 <h4 id="3-6-期望"><a href="#3-6-期望" class="headerlink" title="3.6 期望"></a>3.6 期望</h4><p>在概率论和统计学中，数学期望是试验中每次可能结果的概率乘以其结果的总和。它是最基本的数学特征之一，反映随机变量平均值的大小。</p>
-<p>假设X是一个离散随机变量，其可能的取值有：$\left{ x_{1} ,x_{2} ,……,x_{n} \right} $，各个取值对应的概率取值为：$P\left( x_{k} \right) , k=1,2,……,n$，则其数学期望被定义为：<br>$$<br>E\left(X \right) =\sum_{k=1}^{n}{x_{k} P\left( x_{k} \right) }<br>$$<br>假设$X$是一个连续型随机变量，其概率密度函数为$P\left( x \right)$则其数学期望被定义为：<br>$$<br>E\left( x \right) =\int_{-\varpi }^{+\varpi } xf\left( x \right) dx<br>$$</p>
-<h4 id="3-7-方差"><a href="#3-7-方差" class="headerlink" title="3.7 方差"></a>3.7 方差</h4><p>概率中，方差用来衡量随机变量与其数学期望之间的偏离程度；统计中的方差为样本方差，是各个样本数据分别与其平均数之差的平方和的平均数。数学表达式如下：<br>$$<br>Var\left( x \right) =E\left{ \left[ x-E\left( x \right) \right] ^{2} \right} =E\left( x^{2} \right) -\left[ E\left( x \right) \right] ^{2}<br>$$</p>
-<h4 id="3-8-协方差"><a href="#3-8-协方差" class="headerlink" title="3.8 协方差"></a>3.8 协方差</h4><p>在概率论和统计学中，协方差被用于衡量两个随机变量$X$和$Y$之间的总体误差。数学定义式为：<br>$$<br>Cov\left( X,Y \right) =E\left[ \left( X-E\left[ X \right] \right) \left( Y-E\left[ Y \right] \right) \right] =E\left[ XY \right] -E\left[ X \right] E\left[ Y \right]<br>$$</p>
-<h4 id="3-9-常见分布函数"><a href="#3-9-常见分布函数" class="headerlink" title="3.9 常见分布函数"></a>3.9 常见分布函数</h4><h4 id="1）0-1分布"><a href="#1）0-1分布" class="headerlink" title="1）0-1分布"></a>1）0-1分布</h4><p>$0-1$分布是单个二值型离散随机变量的分布，其概率分布函数为：<br>$$<br>P\left( X=1 \right) =pP\left( X=0 \right) =1-p<br>$$</p>
-<h4 id="2）几何分布"><a href="#2）几何分布" class="headerlink" title="2）几何分布"></a>2）几何分布</h4><p>几何分布是离散型概率分布，其定义为：在n次伯努利试验中，试验k次才得到第一次成功的机率。即：前$k-1$次皆失败，第k次成功的概率。其概率分布函数为：<br>$$<br>P\left( X=k \right) =\left( 1-p \right) ^{k-1} p<br>$$<br>性质：<br>$$<br>E\left( X \right) =\frac{1}{p} Var\left( X \right) =\frac{1-p}{p^{2} }<br>$$</p>
-<h4 id="3）二项分布"><a href="#3）二项分布" class="headerlink" title="3）二项分布"></a>3）二项分布</h4><p>二项分布即重复n次伯努利试验，各次试验之间都相互独立，并且每次试验中只有两种可能的结果，而且这两种结果发生与否相互对立。如果每次试验时，事件发生的概率为p，不发生的概率为1-p，则n次重复独立试验中发生k次的概率为：<br>$$<br>P\left( X=k \right) =C_{n}^{k} p^{k} \left( 1-p \right) ^{n-k}<br>$$<br>性质：<br>$$<br>E\left( X \right) =npVar\left( X \right) =np\left( 1-p \right)<br>$$</p>
-<h4 id="4）高斯分布"><a href="#4）高斯分布" class="headerlink" title="4）高斯分布"></a>4）高斯分布</h4><p>高斯分布又叫正态分布，其曲线呈钟型，两头低，中间高，左右对称因其曲线呈钟形，如下图所示：(A这里少高斯分布图像)</p>
+<p>假设X是一个离散随机变量，其可能的取值有：$\left\{ x<em>{1} ,x</em>{2} ,……,x<em>{n} \right\}$，各个取值对应的概率取值为：$P\left( x</em>{k} \right) , k=1,2,……,n$，则其数学期望被定义为：</p>
+<script type="math/tex; mode=display">
+E\left(X \right) =\sum_{k=1}^{n}{x_{k} P\left( x_{k} \right) }</script><p>假设$X$是一个连续型随机变量，其概率密度函数为$P\left( x \right)$则其数学期望被定义为：</p>
+<script type="math/tex; mode=display">
+E\left( x \right) =\int_{-\varpi }^{+\varpi } xf\left( x \right) dx</script><h4 id="3-7-方差"><a href="#3-7-方差" class="headerlink" title="3.7 方差"></a>3.7 方差</h4><p>概率中，方差用来衡量随机变量与其数学期望之间的偏离程度；统计中的方差为样本方差，是各个样本数据分别与其平均数之差的平方和的平均数。数学表达式如下： </p>
+<script type="math/tex; mode=display">
+Var\left( x \right) =E\left\{ \left[ x-E\left( x \right) \right] ^{2} \right\} =E\left( x^{2} \right) -\left[ E\left( x \right) \right] ^{2}</script><h4 id="3-8-协方差"><a href="#3-8-协方差" class="headerlink" title="3.8 协方差"></a>3.8 协方差</h4><p>在概率论和统计学中，协方差被用于衡量两个随机变量$X$和$Y$之间的总体误差。数学定义式为：</p>
+<script type="math/tex; mode=display">
+Cov\left( X,Y \right) =E\left[ \left( X-E\left[ X \right] \right) \left( Y-E\left[ Y \right] \right) \right] =E\left[ XY \right] -E\left[ X \right] E\left[ Y \right]</script><h4 id="3-9-常见分布函数"><a href="#3-9-常见分布函数" class="headerlink" title="3.9 常见分布函数"></a>3.9 常见分布函数</h4><h4 id="1）0-1分布"><a href="#1）0-1分布" class="headerlink" title="1）0-1分布"></a>1）0-1分布</h4><p>$0-1$分布是单个二值型离散随机变量的分布，其概率分布函数为：  </p>
+<script type="math/tex; mode=display">
+P\left( X=1 \right) =pP\left( X=0 \right) =1-p</script><h4 id="2）几何分布"><a href="#2）几何分布" class="headerlink" title="2）几何分布"></a>2）几何分布</h4><p>几何分布是离散型概率分布，其定义为：在n次伯努利试验中，试验k次才得到第一次成功的机率。即：前$k-1$次皆失败，第k次成功的概率。其概率分布函数为：</p>
+<script type="math/tex; mode=display">
+P\left( X=k \right) =\left( 1-p \right) ^{k-1} p</script><p>性质：</p>
+<script type="math/tex; mode=display">
+E\left( X \right) =\frac{1}{p} Var\left( X \right) =\frac{1-p}{p^{2} }</script><h4 id="3）二项分布"><a href="#3）二项分布" class="headerlink" title="3）二项分布"></a>3）二项分布</h4><p>二项分布即重复n次伯努利试验，各次试验之间都相互独立，并且每次试验中只有两种可能的结果，而且这两种结果发生与否相互对立。如果每次试验时，事件发生的概率为p，不发生的概率为1-p，则n次重复独立试验中发生k次的概率为：   </p>
+<script type="math/tex; mode=display">
+P\left( X=k \right) =C_{n}^{k} p^{k} \left( 1-p \right) ^{n-k}</script><p>性质：   </p>
+<script type="math/tex; mode=display">
+E\left( X \right) =npVar\left( X \right) =np\left( 1-p \right)</script><h4 id="4）高斯分布"><a href="#4）高斯分布" class="headerlink" title="4）高斯分布"></a>4）高斯分布</h4><p>高斯分布又叫正态分布，其曲线呈钟型，两头低，中间高，左右对称因其曲线呈钟形，如下图所示：(A这里少高斯分布图像)</p>
 <p><img src="https://pic4.zhimg.com/80/v2-a0811acc8ab121a3ad8f2e37ff6c37cc_hd.jpg" alt=""></p>
 <p>若随机变量$X$服从一个数学期望为$\mu$，方差为$\sigma ^{2}$的正态分布，则我们将其记为：$N\left( \mu ,\sigma^{2} \right)$。其期望值$\mu$决定了正态分布的位置，其标准差$\sigma$（方差的开方）决定了正态分布的幅度。</p>
 <h4 id="5）指数分布"><a href="#5）指数分布" class="headerlink" title="5）指数分布"></a>5）指数分布</h4><p>指数分布是事件的时间间隔的概率，它的一个重要特征是无记忆性。例如：如果某一元件的寿命的寿命为T，已知元件使用了$t$小时，它总共使用至少$t+s$小时的条件概率，与从开始使用时算起它使用至少$s$小时的概率相等。下面这些都属于指数分布：</p>
@@ -269,16 +303,28 @@
 <li>网站访问的时间间隔</li>
 <li>奶粉销售的时间间隔    </li>
 </ul>
-<p>指数分布的公式可以从泊松分布推断出来。如果下一个婴儿要间隔时间$t$，就等同于$t$之内没有任何婴儿出生，即：<br>$$<br>P\left( X\geq t \right) =P\left( N\left( t \right) =0 \right) =\frac{\left( \lambda t \right) ^{0}\cdot e^{-\lambda t} }{0!}=e^{-\lambda t}<br>$$<br>则：<br>$$<br>P\left( X\leq t \right) =1-P\left( X\geq t \right) =1-e^{-\lambda t}<br>$$<br>如：接下来15分钟，会有婴儿出生的概率为：<br>$$<br>P\left( X\leq \frac{1}{4} \right) =1-e^{-3\cdot \frac{1}{4} } \approx 0.53<br>$$<br>指数分布的图像如下：</p>
+<p>指数分布的公式可以从泊松分布推断出来。如果下一个婴儿要间隔时间$t$，就等同于$t$之内没有任何婴儿出生，即：   </p>
+<script type="math/tex; mode=display">
+P\left( X\geq t \right) =P\left( N\left( t \right) =0 \right) =\frac{\left( \lambda t \right) ^{0}\cdot e^{-\lambda t} }{0!}=e^{-\lambda t}</script><p>则：   </p>
+<script type="math/tex; mode=display">
+P\left( X\leq t \right) =1-P\left( X\geq t \right) =1-e^{-\lambda t}</script><p>如：接下来15分钟，会有婴儿出生的概率为：</p>
+<script type="math/tex; mode=display">
+P\left( X\leq \frac{1}{4} \right) =1-e^{-3\cdot \frac{1}{4} } \approx 0.53</script><p>指数分布的图像如下：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-a58c37c481e032bbb53ff17113754ef6_hd.jpg" alt="tu"></p>
 <h4 id="6）泊松分布"><a href="#6）泊松分布" class="headerlink" title="6）泊松分布"></a>6）泊松分布</h4><p>日常生活中，大量事件是有固定频率的，比如：</p>
 <p>某医院平均每小时出生3个婴儿<br>某网站平均每分钟有2次访问<br>某超市平均每小时销售4包奶粉<br>它们的特点就是，我们可以预估这些事件的总数，但是没法知道具体的发生时间。已知平均每小时出生3个婴儿，请问下一个小时，会出生几个？有可能一下子出生6个，也有可能一个都不出生，这是我们没法知道的。</p>
-<p>泊松分布就是描述某段时间内，事件具体的发生概率。其概率函数为：<br>$$<br>P\left( N\left( t \right) =n \right) =\frac{\left( \lambda t \right) ^{n}e^{-\lambda t} }{n!}<br>$$<br>其中：</p>
+<p>泊松分布就是描述某段时间内，事件具体的发生概率。其概率函数为：   </p>
+<script type="math/tex; mode=display">
+P\left( N\left( t \right) =n \right) =\frac{\left( \lambda t \right) ^{n}e^{-\lambda t} }{n!}</script><p>其中：</p>
 <p>$P$表示概率，$N$表示某种函数关系，$t$表示时间，$n$表示数量，1小时内出生3个婴儿的概率，就表示为$P(N(1) = 3)$；$λ$表示事件的频率。</p>
 <p>还是以上面医院平均每小时出生3个婴儿为例，则$\lambda =3$；</p>
-<p>那么，接下来两个小时，一个婴儿都不出生的概率可以求得为：<br>$$<br>P\left( N\left(2 \right) =0 \right) =\frac{\left( 3\cdot 2 \right) ^{o} \cdot e^{-3\cdot 2} }{0!} \approx 0.0025<br>$$<br>同理，我们可以求接下来一个小时，至少出生两个婴儿的概率：<br>$$<br>P\left( N\left( 1 \right) \geq 2 \right) =1-P\left( N\left( 1 \right)=0 \right) - P\left( N\left( 1 \right)=1 \right)\approx 0.8<br>$$<br>【注】上面的指数分布和泊松分布参考了阮一峰大牛的博客：“泊松分布和指数分布：10分钟教程”，在此说明，也对其表示感谢！</p>
+<p>那么，接下来两个小时，一个婴儿都不出生的概率可以求得为：   </p>
+<script type="math/tex; mode=display">
+P\left( N\left(2 \right) =0 \right) =\frac{\left( 3\cdot 2 \right) ^{o} \cdot e^{-3\cdot 2} }{0!} \approx 0.0025</script><p>同理，我们可以求接下来一个小时，至少出生两个婴儿的概率：    </p>
+<script type="math/tex; mode=display">
+P\left( N\left( 1 \right) \geq 2 \right) =1-P\left( N\left( 1 \right)=0 \right) - P\left( N\left( 1 \right)=1 \right)\approx 0.8</script><p>【注】上面的指数分布和泊松分布参考了阮一峰大牛的博客：“泊松分布和指数分布：10分钟教程”，在此说明，也对其表示感谢！</p>
 <h4 id="3-10-Lagrange乘子法"><a href="#3-10-Lagrange乘子法" class="headerlink" title="3.10 Lagrange乘子法"></a>3.10 Lagrange乘子法</h4><p>对于一般的求极值问题我们都知道，求导等于0就可以了。但是如果我们不但要求极值，还要求一个满足一定约束条件的极值，那么此时就可以构造Lagrange函数，其实就是把约束项添加到原函数上，然后对构造的新函数求导。</p>
-<p>对于一个要求极值的函数$f\left( x,y \right)$，图上的蓝圈就是这个函数的等高图，就是说$f\left( x,y \right) =c_{1} ,c_{2} ,…,c_{n}$分别代表不同的数值(每个值代表一圈，等高图)，我要找到一组$\left( x,y \right)$，使它的$c_{i}$值越大越好，但是这点必须满足约束条件$g\left( x,y \right)$（在黄线上）。</p>
+<p>对于一个要求极值的函数$f\left( x,y \right)$，图上的蓝圈就是这个函数的等高图，就是说$f\left( x,y \right) =c<em>{1} ,c</em>{2} ,…,c<em>{n}$分别代表不同的数值(每个值代表一圈，等高图)，我要找到一组$\left( x,y \right)$，使它的$c</em>{i}$值越大越好，但是这点必须满足约束条件$g\left( x,y \right)$（在黄线上）。</p>
 <p><img src="https://pic1.zhimg.com/80/v2-e59fd8c296c7e8c3b804726998610b31_hd.jpg" alt="tu1" title="tu1"></p>
 <p>也就是说$f(x,y)$和$g(x,y)$相切，或者说它们的梯度$\nabla{f}$和$\nabla{g}$平行，因此它们的梯度（偏导）成倍数关系；那我么就假设为$\lambda $倍，然后把约束条件加到原函数后再对它求导，其实就等于满足了下图上的式子。</p>
 <p>在支持向量机模型（SVM）的推导中一步很关键的就是利用拉格朗日对偶性将原问题转化为对偶问题。</p>
@@ -287,23 +333,35 @@
 <p>举个例子，假设我们要统计全国人口的身高，首先假设这个身高服从服从正态分布，但是该分布的均值与方差未知。由于没有足够的人力和物力去统计全国每个人的身高，但是可以通过采样（所有的采样要求都是独立同分布的），获取部分人的身高，然后通过最大似然估计来获取上述假设中的正态分布的均值与方差。</p>
 <p>求极大似然函数估计值的一般步骤：</p>
 <ol>
-<li>写出似然函数；<br>$$<br>L(\theta_1,\theta_2,\dots,\theta_n)=<br>\left {<br>\begin{array}{c}<br>\prod_{i=1}^{n}p(x_i;\theta_1,\theta_2,\dots,\theta_n)\<br>\prod_{i=1}^{n}f(x_i;\theta_1,\theta_2,\dots,\theta_n)<br>\end{array}<br>\right.<br>$$</li>
+<li>写出似然函数； <script type="math/tex; mode=display">
+L(\theta_1,\theta_2,\dots,\theta_n)=
+\left \{
+\begin{array}{c}
+\prod_{i=1}^{n}p(x_i;\theta_1,\theta_2,\dots,\theta_n)\\
+\prod_{i=1}^{n}f(x_i;\theta_1,\theta_2,\dots,\theta_n)
+\end{array}
+\right.</script></li>
 <li>对似然函数取对数；  </li>
 <li>两边同时求导数；  </li>
 <li>令导数为0解出似然方程。  </li>
 </ol>
 <p>在机器学习中也会经常见到极大似然的影子。比如后面的<strong>逻辑斯特回归模型（LR）</strong>，其核心就是构造对数损失函数后运用极大似然估计。</p>
 <h3 id="四、信息论"><a href="#四、信息论" class="headerlink" title="四、信息论"></a>四、信息论</h3><p>信息论本来是通信中的概念，但是其核心思想“熵”在机器学习中也得到了广泛的应用。比如决策树模型$ID3$，$C4.5$中是利用<strong>信息增益</strong>来划分特征而生成一颗决策树的，而信息增益就是基于这里所说的<strong>熵</strong>。所以它的重要性也是可想而知。</p>
-<h4 id="4-1-熵"><a href="#4-1-熵" class="headerlink" title="4.1 熵"></a>4.1 熵</h4><p>如果一个随机变量X的可能取值为$X=\left{ x_{1},x_{2} ,…..,x_{n} \right}$，其概率分布为$P\left( X=x_{i} \right) =p_{i} ,i=1,2,…..,n$，则随机变量X的熵定义为$H(X)$：</p>
-<p>$$H\left( X \right) =-\sum_{i=1}^{n}{P\left( x_{i} \right) logP\left( x_{i} \right) } =\sum_{i=1}^{n}{P\left( x_{i} \right) \frac{1}{logP\left( x_{i} \right) } } $$</p>
-<h4 id="4-2-联合熵"><a href="#4-2-联合熵" class="headerlink" title="4.2 联合熵"></a>4.2 联合熵</h4><p>两个随机变量X和Y的联合分布可以形成联合熵，定义为联合自信息的数学期望，它是二维随机变量XY的不确定性的度量，用$H(X,Y)$表示：</p>
-<p>$$H\left( X,Y \right) =-\sum_{i=1}^{n}{\sum_{j=1}^{n}{P\left( x_{i} ,y_{j} \right)} logP\left( x_{i},y_{j} \right) }$$</p>
-<h4 id="4-3-条件熵"><a href="#4-3-条件熵" class="headerlink" title="4.3 条件熵"></a>4.3 条件熵</h4><p>在随机变量$X$发生的前提下，随机变量$Y$发生新带来的熵，定义为$Y$的条件熵，用$H(Y|X)$表示：</p>
-<p>$$H\left(Y|X \right) =-\sum_{x,y}^{}{P\left( x,y \right) logP\left( y|x \right) }$$ </p>
-<p>条件熵用来衡量在已知随机变量$X$的条件下，随机变量$Y$的不确定性。</p>
+<h4 id="4-1-熵"><a href="#4-1-熵" class="headerlink" title="4.1 熵"></a>4.1 熵</h4><p>如果一个随机变量X的可能取值为$X=\left\{ x<em>{1},x</em>{2} ,…..,x<em>{n} \right\}$，其概率分布为$P\left( X=x</em>{i} \right) =p_{i} ,i=1,2,…..,n$，则随机变量X的熵定义为$H(X)$：</p>
+<script type="math/tex; mode=display">H\left( X \right) =-\sum_{i=1}^{n}{P\left( x_{i} \right) logP\left( x_{i} \right) } =\sum_{i=1}^{n}{P\left( x_{i} \right) \frac{1}{logP\left( x_{i} \right) } }</script><h4 id="4-2-联合熵"><a href="#4-2-联合熵" class="headerlink" title="4.2 联合熵"></a>4.2 联合熵</h4><p>两个随机变量X和Y的联合分布可以形成联合熵，定义为联合自信息的数学期望，它是二维随机变量XY的不确定性的度量，用$H(X,Y)$表示：</p>
+<script type="math/tex; mode=display">H\left( X,Y \right) =-\sum_{i=1}^{n}{\sum_{j=1}^{n}{P\left( x_{i} ,y_{j} \right)} logP\left( x_{i},y_{j} \right) }</script><h4 id="4-3-条件熵"><a href="#4-3-条件熵" class="headerlink" title="4.3 条件熵"></a>4.3 条件熵</h4><p>在随机变量$X$发生的前提下，随机变量$Y$发生新带来的熵，定义为$Y$的条件熵，用$H(Y|X)$表示：</p>
+<script type="math/tex; mode=display">H\left(Y|X \right) =-\sum_{x,y}^{}{P\left( x,y \right) logP\left( y|x \right) }</script><p>条件熵用来衡量在已知随机变量$X$的条件下，随机变量$Y$的不确定性。</p>
 <p>实际上，熵、联合熵和条件熵之间存在以下关系：</p>
-<p>$$H\left( Y|X \right) =H\left( X,Y\right) -H\left( X \right)$$ </p>
-<p>推导过程如下：<br>$$<br>\begin{array}{ll}<br>H\left( X,Y\right) -H\left( X \right)\<br>\ \ \ =-\sum_{x,y}^{}{P(x,y)logP(x,y)}+\sum_{x}p(x)log{p(x)}\<br>\ \ \ =-\sum_{x,y}^{}{P(x,y)logP(x,y)}+\sum_{x}{(\sum_{y}p(x,y))}log{p(x)}\<br>\ \ \ =-\sum_{x,y}^{}{P(x,y)logP(y|x)}+\sum_{x,y}p(x,y)log{p(x)}\<br>\ \ \ =-\sum_{x,y}^{}{P(x,y)}log{\frac{p(x,y)}{p(x)}}\<br>\ \ \ =-\sum_{x,y}^{}{P(x,y)}logp(y|x)<br>\end{array}<br>$$<br>其中：</p>
+<script type="math/tex; mode=display">H\left( Y|X \right) =H\left( X,Y\right) -H\left( X \right)</script><p>推导过程如下：  </p>
+<script type="math/tex; mode=display">
+\begin{array}{ll}
+H\left( X,Y\right) -H\left( X \right)\\
+\ \ \ =-\sum_{x,y}^{}{P(x,y)logP(x,y)}+\sum_{x}p(x)log{p(x)}\\
+\ \ \ =-\sum_{x,y}^{}{P(x,y)logP(x,y)}+\sum_{x}{(\sum_{y}p(x,y))}log{p(x)}\\
+\ \ \ =-\sum_{x,y}^{}{P(x,y)logP(y|x)}+\sum_{x,y}p(x,y)log{p(x)}\\
+\ \ \ =-\sum_{x,y}^{}{P(x,y)}log{\frac{p(x,y)}{p(x)}}\\
+\ \ \ =-\sum_{x,y}^{}{P(x,y)}logp(y|x)
+\end{array}</script><p>其中：</p>
 <ul>
 <li>第二行推到第三行的依据是边缘分布$P(x)$等于联合分布$P(x,y)$的和；</li>
 <li>第三行推到第四行的依据是把公因子$logP(x)$乘进去，然后把$x$,$y$写在一起；</li>
@@ -311,22 +369,30 @@
 <li>第五行推到第六行的依据是：$P(x,y) = P(x) * P(y|x)$，故$P(x,y) / P(x) =  P(y|x)$。   </li>
 </ul>
 <h4 id="4-4-相对熵"><a href="#4-4-相对熵" class="headerlink" title="4.4 相对熵"></a>4.4 相对熵</h4><p>相对熵又称互熵、交叉熵、$KL$散度、信息增益，是描述两个概率分布$P$和$Q$差异的一种方法，记为<strong>$D(P||Q)$</strong>。在信息论中，$D(P||Q)$表示当用概率分布$Q$来拟合真实分布P时，产生的信息损耗，其中P表示真实分布，$Q$表示$P$的拟合分布。</p>
-<p>对于一个离散随机变量的两个概率分布$P$和$Q$来说，它们的相对熵定义为：<br>$$<br>D\left( P||Q \right) =\sum_{i=1}^{n}{P\left( x_{i} \right) log\frac{P\left( x_{i} \right) }{Q\left( x_{i} \right) } }<br>$$<br>注意：$D(P||Q) ≠ D(Q||P)$</p>
+<p>对于一个离散随机变量的两个概率分布$P$和$Q$来说，它们的相对熵定义为：</p>
+<script type="math/tex; mode=display">
+D\left( P||Q \right) =\sum_{i=1}^{n}{P\left( x_{i} \right) log\frac{P\left( x_{i} \right) }{Q\left( x_{i} \right) } }</script><p>注意：$D(P||Q) ≠ D(Q||P)$</p>
 <p>相对熵又称<strong>$KL$散度($Kullback–Leibler divergence$)</strong>，$KL$散度也是一个机器学习中常考的概念。</p>
-<h4 id="4-5-互信息"><a href="#4-5-互信息" class="headerlink" title="4.5 互信息"></a>4.5 互信息</h4><p>两个随机变量X，Y的互信息定义为X，Y的联合分布和各自独立分布乘积的相对熵称为互信息，用I(X,Y)表示。互信息是信息论里一种有用的信息度量方式，它可以看成是一个随机变量中包含的关于另一个随机变量的信息量，或者说是一个随机变量由于已知另一个随机变量而减少的不肯定性。<br>$$<br>I\left( X,Y \right) =\sum_{x\in X}^{}{\sum_{y\in Y}^{}{P\left( x,y \right) } log\frac{P\left( x,y \right) }{P\left( x \right) P\left( y \right) } }<br>$$<br>互信息、熵和条件熵之间存在以下关系：$ H\left( Y|X \right) =H\left( Y \right) -I\left( X,Y \right) $  </p>
+<h4 id="4-5-互信息"><a href="#4-5-互信息" class="headerlink" title="4.5 互信息"></a>4.5 互信息</h4><p>两个随机变量X，Y的互信息定义为X，Y的联合分布和各自独立分布乘积的相对熵称为互信息，用I(X,Y)表示。互信息是信息论里一种有用的信息度量方式，它可以看成是一个随机变量中包含的关于另一个随机变量的信息量，或者说是一个随机变量由于已知另一个随机变量而减少的不肯定性。  </p>
+<script type="math/tex; mode=display">
+I\left( X,Y \right) =\sum_{x\in X}^{}{\sum_{y\in Y}^{}{P\left( x,y \right) } log\frac{P\left( x,y \right) }{P\left( x \right) P\left( y \right) } }</script><p>互信息、熵和条件熵之间存在以下关系：$ H\left( Y|X \right) =H\left( Y \right) -I\left( X,Y \right) $  </p>
 <p>推导过程如下：</p>
 <p><img src="https://pic3.zhimg.com/v2-6f41bffde009999cbc370f7f38cab092_r.jpg" alt="img"></p>
 <p>通过上面的计算过程发现有：$H(Y|X) = H(Y) - I(X,Y)$，又由前面条件熵的定义有：$H(Y|X) = H(X,Y) - H(X)$，于是有$I(X,Y)= H(X) + H(Y) - H(X,Y)$，此结论被多数文献作为互信息的定义。</p>
 <h3 id="4-6、最大熵模型"><a href="#4-6、最大熵模型" class="headerlink" title="4-6、最大熵模型"></a>4-6、最大熵模型</h3><p>最大熵原理是概率模型学习的一个准则，它认为：学习概率模型时，在所有可能的概率分布中，熵最大的模型是最好的模型。通常用约束条件来确定模型的集合，所以，最大熵模型原理也可以表述为：在满足约束条件的模型集合中选取熵最大的模型。 </p>
-<p>前面我们知道，若随机变量X的概率分布是$P\left( x_{i} \right)$ ，则其熵定义如下：<br>$$<br>H\left( X \right) =-\sum_{i=1}^{n}{P\left( x_{i} \right) logP\left( x_{i} \right) } =\sum_{i=1}^{n}{P\left( x_{i} \right) \frac{1}{logP\left( x_{i} \right) } }<br>$$<br>熵满足下列不等式：<br>$$<br>0\leq H\left( X \right) \leq log\left| X \right|<br>$$<br>式中，$|X|$是$X$的取值个数，当且仅当$X$的分布是均匀分布时右边的等号成立。也就是说，当$X$服从均匀分布时，熵最大。</p>
+<p>前面我们知道，若随机变量X的概率分布是$P\left( x_{i} \right)$ ，则其熵定义如下：    </p>
+<script type="math/tex; mode=display">
+H\left( X \right) =-\sum_{i=1}^{n}{P\left( x_{i} \right) logP\left( x_{i} \right) } =\sum_{i=1}^{n}{P\left( x_{i} \right) \frac{1}{logP\left( x_{i} \right) } }</script><p>熵满足下列不等式：</p>
+<script type="math/tex; mode=display">
+0\leq H\left( X \right) \leq log\left| X \right|</script><p>式中，$|X|$是$X$的取值个数，当且仅当$X$的分布是均匀分布时右边的等号成立。也就是说，当$X$服从均匀分布时，熵最大。</p>
 <p>直观地看，最大熵原理认为：要选择概率模型，首先必须满足已有的事实，即约束条件；在没有更多信息的情况下，那些不确定的部分都是“等可能的”。最大熵原理通过熵的最大化来表示等可能性；“等可能”不易操作，而熵则是一个可优化的指标。</p>
 <h2 id="五、-数值计算"><a href="#五、-数值计算" class="headerlink" title="五、 数值计算"></a>五、 数值计算</h2><h3 id="5-1-上溢和下溢"><a href="#5-1-上溢和下溢" class="headerlink" title="5.1 上溢和下溢"></a>5.1 上溢和下溢</h3><p>在数字计算机上实现连续数学的基本困难是：我们需要通过有限数量的位模式来表示无限多的实数，这意味着我们在计算机中表示实数时几乎都会引入一些近似误差。在许多情况下，这仅仅是舍入误差。如果在理论上可行的算法没有被设计为最小化舍入误差的累积，可能会在实践中失效，因此舍入误差是有问题的，特别是在某些操作复合时。</p>
 <p>一种特别毁灭性的舍入误差是下溢。当接近零的数被四舍五入为零时发生下溢。许多函数会在其参数为零而不是一个很小的正数时才会表现出质的不同。例如，我们通常要避免被零除。</p>
 <p>另一个极具破坏力的数值错误形式是上溢(overflow)。当大量级的数被近似为\varpi 或-\varpi 时发生上溢。进一步的运算通常将这些无限值变为非数字。</p>
 <p>必须对上溢和下溢进行数值稳定的一个例子是softmax 函数。softmax 函数经常用于预测与$multinoulli$分布相关联的概率，定义为：</p>
 <p><img src="https://pic2.zhimg.com/80/v2-7283f680255ba0da3a69f2df58b58ae0_hd.jpg" alt=""></p>
-<p>softmax 函数在多分类问题中非常常见。这个函数的作用就是使得在负无穷到0的区间趋向于0，在0到正无穷的区间趋向于1。上面表达式其实是多分类问题中计算某个样本 $x_{i} $的类别标签$ y_{i}$ 属于$K$个类别的概率，最后判别$ y_{i}$ 所属类别时就是将其归为对应概率最大的那一个。</p>
-<p>当式中的$w_{k} x_{i} +b$都是很小的负数时，$e^{w_{k} x_{i} +b }$ 就会发生下溢，这意味着上面函数的分母会变成0，导致结果是未定的；同理，当式中的$x_{w_{k} x_{i} +b} $是很大的正数时，$e^{w_{k} x_{i} +b }$ 就会发生上溢导致结果是未定的。</p>
+<p>softmax 函数在多分类问题中非常常见。这个函数的作用就是使得在负无穷到0的区间趋向于0，在0到正无穷的区间趋向于1。上面表达式其实是多分类问题中计算某个样本 $x<em>{i} $的类别标签$ y</em>{i}$ 属于$K$个类别的概率，最后判别$ y_{i}$ 所属类别时就是将其归为对应概率最大的那一个。</p>
+<p>当式中的$w<em>{k} x</em>{i} +b$都是很小的负数时，$e^{w<em>{k} x</em>{i} +b }$ 就会发生下溢，这意味着上面函数的分母会变成0，导致结果是未定的；同理，当式中的$x<em>{w</em>{k} x<em>{i} +b} $是很大的正数时，$e^{w</em>{k} x_{i} +b }$ 就会发生上溢导致结果是未定的。</p>
 <h3 id="5-2-计算复杂性与NP问题"><a href="#5-2-计算复杂性与NP问题" class="headerlink" title="5.2 计算复杂性与NP问题"></a>5.2 计算复杂性与NP问题</h3><h4 id="1-算法复杂性"><a href="#1-算法复杂性" class="headerlink" title="1.算法复杂性"></a>1.算法复杂性</h4><p>现实中大多数问题都是离散的数据集，为了反映统计规律，有时数据量很大，而且多数目标函数都不能简单地求得解析解。这就带来一个问题：算法的复杂性。</p>
 <p>算法理论被认为是解决各类现实问题的方法论。衡量算法有两个重要的指标：时间复杂度和空间复杂度，这是对算法执行所需要的两类资源——时间和空间的估算。</p>
 <p>一般，衡量问题是否可解的重要指标是：该问题能否在多项式时间内求解，还是只能在指数时间内求解？在各类算法理论中，通常使用多项式时间算法即可解决的问题看作是易解问题，需要指数时间算法解决的问题看作是难解问题。</p>
@@ -351,39 +417,44 @@
 <h3 id="6-2-最优化问题的数学描述"><a href="#6-2-最优化问题的数学描述" class="headerlink" title="6.2 最优化问题的数学描述"></a>6.2 最优化问题的数学描述</h3><p>最优化的基本数学模型如下：</p>
 <p><img src="https://pic3.zhimg.com/80/v2-f35226b3e0fa018db6a4b233c51eccbe_hd.jpg" alt=""></p>
 <p>它有三个基本要素，即：</p>
-<p>设计变量：$x$是一个实数域范围内的$n$维向量，被称为决策变量或问题的解；<br>目标函数：$f(x)$为目标函数；<br>约束条件：$h_{i} \left( x \right) =0$称为等式约束，$g_{i} \left( x \right) \leq 0$为不等式约束，$i=0,1,2,……$</p>
+<p>设计变量：$x$是一个实数域范围内的$n$维向量，被称为决策变量或问题的解；<br>目标函数：$f(x)$为目标函数；<br>约束条件：$h<em>{i} \left( x \right) =0$称为等式约束，$g</em>{i} \left( x \right) \leq 0$为不等式约束，$i=0,1,2,……$</p>
 <h3 id="6-3-凸集与凸集分离定理"><a href="#6-3-凸集与凸集分离定理" class="headerlink" title="6.3 凸集与凸集分离定理"></a>6.3 凸集与凸集分离定理</h3><h4 id="1-凸集"><a href="#1-凸集" class="headerlink" title="1.凸集"></a>1.凸集</h4><p>实数域R上（或复数C上）的向量空间中，如果集合S中任两点的连线上的点都在S内，则称集合S为凸集，如下图所示：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-608f89f47688c41e4c3f83cfad095c84_hd.jpg" alt=""></p>
 <p>数学定义为：</p>
-<p>设集合$D\subset R^{n} $，若对于任意两点$x,y\in D$，及实数$\lambda \left( 0\leq \lambda \leq 1 \right)$ 都有：<br>$$<br>\lambda x+\left( 1-\lambda \right) y\in D<br>$$<br>则称集合$D$为凸集。</p>
+<p>设集合$D\subset R^{n} $，若对于任意两点$x,y\in D$，及实数$\lambda \left( 0\leq \lambda \leq 1 \right)$ 都有：   </p>
+<script type="math/tex; mode=display">
+\lambda x+\left( 1-\lambda \right) y\in D</script><p>则称集合$D$为凸集。</p>
 <h4 id="2-超平面和半空间"><a href="#2-超平面和半空间" class="headerlink" title="2.超平面和半空间"></a>2.超平面和半空间</h4><p>实际上，二维空间的超平面就是一条线（可以使曲线），三维空间的超平面就是一个面（可以是曲面）。其数学表达式如下：</p>
-<p>超平面：$H=\left{ x\in R^{n} |a_{1} +a_{2}+…+a_{n} =b \right} $</p>
-<p>半空间：$H^{+} =\left{ x\in R^{n} |a_{1} +a_{2}+…+a_{n} \geq b \right} $ </p>
+<p>超平面：$H=\left\{ x\in R^{n} |a<em>{1} +a</em>{2}+…+a_{n} =b \right\} $</p>
+<p>半空间：$H^{+} =\left\{ x\in R^{n} |a<em>{1} +a</em>{2}+…+a_{n} \geq b \right\} $ </p>
 <h4 id="3-凸集分离定理"><a href="#3-凸集分离定理" class="headerlink" title="3.凸集分离定理"></a>3.凸集分离定理</h4><p>所谓两个凸集分离，直观地看是指两个凸集合没有交叉和重合的部分，因此可以用一张超平面将两者隔在两边，如下图所示：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-4116a3bda12faa5e2421ce27efb7fb71_hd.jpg" alt=""></p>
 <h4 id="4-凸函数"><a href="#4-凸函数" class="headerlink" title="4.凸函数"></a>4.凸函数</h4><p>凸函数就是一个定义域在某个向量空间的凸子集C上的实值函数。</p>
 <p><img src="https://pic2.zhimg.com/80/v2-f1b39d0aad4388433158679221f813d2_hd.jpg" alt=""></p>
 <p>数学定义为： </p>
 <p>对于函数$f(x)$，如果其定义域$C$是凸的，且对于$∀x,y∈C，0\leq \alpha \leq 1$，<br> 有：  </p>
-<p>$$<br>f\left( \theta x+\left( 1-\theta \right) y \right) \leq \theta f\left( x \right) +\left( 1-\theta \right) f\left( y \right)<br>$$<br>则$f(x)$是凸函数。</p>
+<script type="math/tex; mode=display">
+f\left( \theta x+\left( 1-\theta \right) y \right) \leq \theta f\left( x \right) +\left( 1-\theta \right) f\left( y \right)</script><p>则$f(x)$是凸函数。</p>
 <p>注：如果一个函数是凸函数，则其局部最优点就是它的全局最优点。这个性质在机器学习算法优化中有很重要的应用，因为机器学习模型最后就是在求某个函数的全局最优点，一旦证明该函数（机器学习里面叫“损失函数”）是凸函数，那相当于我们只用求它的局部最优点了。</p>
 <h3 id="6-4-梯度下降算法"><a href="#6-4-梯度下降算法" class="headerlink" title="6.4 梯度下降算法"></a>6.4 梯度下降算法</h3><h4 id="1-引入"><a href="#1-引入" class="headerlink" title="1.引入"></a>1.引入</h4><p>前面讲数值计算的时候提到过，计算机在运用迭代法做数值计算（比如求解某个方程组的解）时，只要误差能够收敛，计算机最后经过一定次数的迭代后是可以给出一个跟真实解很接近的结果的。</p>
 <p>这里进一步提出一个问题，如果我们得到的目标函数是非线性的情况下，按照哪个方向迭代求解误差的收敛速度会最快呢？</p>
 <p>答案就是沿梯度方向。这就引入了我们的梯度下降法。</p>
 <h4 id="2-梯度下降法"><a href="#2-梯度下降法" class="headerlink" title="2.梯度下降法"></a>2.梯度下降法</h4><p>在多元微分学中，梯度就是函数的导数方向。</p>
 <p>梯度法是求解无约束多元函数极值最早的数值方法，很多机器学习的常用算法都是以它作为算法框架，进行改进而导出更为复杂的优化方法。</p>
-<p>在求解目标函数f\left( x \right) 的最小值时，为求得目标函数的一个凸函数，在最优化方法中被表示为：<br>$$<br>minf\left( x \right)<br>$$<br>根据导数的定义，函数$f\left( x \right) $的导函数就是目标函数在$x$上的变化率。在多元的情况下，目标函数$f\left( x,y,z \right) $在某点的梯度$grad f\left( x,y,z \right) =\left( \frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z} \right)$ 是一个由各个分量的偏导数构成的向量，负梯度方向是$f\left( x,y,z \right) $减小最快的方向。</p>
+<p>在求解目标函数f\left( x \right) 的最小值时，为求得目标函数的一个凸函数，在最优化方法中被表示为：</p>
+<script type="math/tex; mode=display">
+minf\left( x \right)</script><p>根据导数的定义，函数$f\left( x \right) $的导函数就是目标函数在$x$上的变化率。在多元的情况下，目标函数$f\left( x,y,z \right) $在某点的梯度$grad f\left( x,y,z \right) =\left( \frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z} \right)$ 是一个由各个分量的偏导数构成的向量，负梯度方向是$f\left( x,y,z \right) $减小最快的方向。</p>
 <p><img src="https://pic4.zhimg.com/80/v2-e61c38f10e34badf5b2c1f3b9c9bcfa0_hd.jpg" alt=""></p>
-<p>如上图所示，当需要求$f\left( x \right) $的最小值时（机器学习中的$f\left( x \right) $一般就是损失函数，而我们的目标就是希望损失函数最小化），我们就可以先任意选取一个函数的初始点$x_{0} $（三维情况就是$\left( x_{0} ,y_{0} ,z_{0} \right)$ ），让其沿着途中红色箭头（负梯度方向）走，依次到$x_{1} ，x_{2} ，…，x_{n} $（迭代n次）这样可最快达到极小值点。</p>
+<p>如上图所示，当需要求$f\left( x \right) $的最小值时（机器学习中的$f\left( x \right) $一般就是损失函数，而我们的目标就是希望损失函数最小化），我们就可以先任意选取一个函数的初始点$x<em>{0} $（三维情况就是$\left( x</em>{0} ,y<em>{0} ,z</em>{0} \right)$ ），让其沿着途中红色箭头（负梯度方向）走，依次到$x<em>{1} ，x</em>{2} ，…，x_{n} $（迭代n次）这样可最快达到极小值点。</p>
 <p>梯度下降法过程如下：</p>
 <p>输入：目标函数$f\left( x \right) $，梯度函数$g\left( x \right) =grad f\left( x \right) $，计算精度$\varepsilon $</p>
 <p>输出：$f\left( x \right) 的极小值点x^{*} $</p>
 <ol>
 <li>任取取初始值$x_{0}$ ，置$k=0$；</li>
 <li>计算$f\left( x_{k} \right) $；</li>
-<li>计算梯度$g_{k} =grad f\left( x_{k} \right) $，当$\left| \left| g_{k} \right| \right| &lt;\varepsilon $时停止迭代，令$x^{*} =x_{k}$ ；</li>
-<li>否则令$P_{k} =-g_{k}$ ，求$\lambda <em>{k} 使f\left( x</em>{k+1} \right) =minf\left( x_{k} +\lambda <em>{k} P</em>{k} \right) $；</li>
-<li>置$x_{k+1} =x_{k} +\lambda <em>{k} P</em>{k} $，计算$f\left( x_{k+1}\right) $，当$\left| \left| f\left( x_{k+1}\right) -f\left( x_{k}\right) \right| \right| &lt;\varepsilon 或\left| \left| x_{k+1} -x_{k} \right| \right| &lt;\varepsilon $时，停止迭代，令$x^{*} =x_{k+1}  $；</li>
+<li>计算梯度$g<em>{k} =grad f\left( x</em>{k} \right) $，当$\left| \left| g<em>{k} \right| \right| &lt;\varepsilon $时停止迭代，令$x^{*} =x</em>{k}$ ；</li>
+<li>否则令$P<em>{k} =-g</em>{k}$ ，求$\lambda <em>{k} 使f\left( x</em>{k+1} \right) =minf\left( x<em>{k} +\lambda </em>{k} P_{k} \right) $；</li>
+<li>置$x<em>{k+1} =x</em>{k} +\lambda <em>{k} P</em>{k} $，计算$f\left( x<em>{k+1}\right) $，当$\left| \left| f\left( x</em>{k+1}\right) -f\left( x<em>{k}\right) \right| \right| &lt;\varepsilon 或\left| \left| x</em>{k+1} -x<em>{k} \right| \right| &lt;\varepsilon $时，停止迭代，令$x^{*} =x</em>{k+1}  $；</li>
 <li>否则，置$k=k+1$，转$3$。</li>
 </ol>
 <h3 id="6-5-随机梯度下降算法"><a href="#6-5-随机梯度下降算法" class="headerlink" title="6.5 随机梯度下降算法"></a>6.5 随机梯度下降算法</h3><p>上面可以看到，在梯度下降法的迭代中，除了梯度值本身的影响外，还有每一次取的步长\lambda _{k} 也很关键：步长值取得越大，收敛速度就会越快，但是带来的可能后果就是容易越过函数的最优点，导致发散；步长取太小，算法的收敛速度又会明显降低。因此我们希望找到一种比较好的方法能够平衡步长。</p>
@@ -393,8 +464,16 @@
 <h3 id="6-6-牛顿法"><a href="#6-6-牛顿法" class="headerlink" title="6.6 牛顿法"></a>6.6 牛顿法</h3><h4 id="1-牛顿法介绍"><a href="#1-牛顿法介绍" class="headerlink" title="1.牛顿法介绍"></a>1.牛顿法介绍</h4><p>牛顿法也是求解无约束最优化问题常用的方法，最大的优点是收敛速度快。</p>
 <p>从本质上去看，牛顿法是二阶收敛，梯度下降是一阶收敛，所以牛顿法就更快。通俗地说，比如你想找一条最短的路径走到一个盆地的最底部，梯度下降法 每次只从你当前所处位置选一个坡度最大的方向走一步，牛顿法在选择方向时，不仅会考虑坡度是否够大，还会考虑你走了一步之后，坡度是否会变得更大。所以， 可以说牛顿法比梯度下降法看得更远一点，能更快地走到最底部。</p>
 <p><img src="https://pic3.zhimg.com/80/v2-e22ea8c565434e945a17a80bec5630b6_hd.jpg" alt=""><br>或者从几何上说，牛顿法就是用一个二次曲面去拟合你当前所处位置的局部曲面，而梯度下降法是用一个平面去拟合当前的局部曲面，通常情况下，二次曲面的拟合会比平面更好，所以牛顿法选择的下降路径会更符合真实的最优下降路径。</p>
-<h4 id="2-牛顿法的推导"><a href="#2-牛顿法的推导" class="headerlink" title="2.牛顿法的推导"></a>2.牛顿法的推导</h4><p>将目标函数$f\left( x \right)  在x_{k}$ 处进行二阶泰勒展开，可得：<br>$$<br>f\left( x \right) =f\left( x_{k} \right) +f^{‘} \left( x_{k} \right) \left( x-x_{k} \right) +\frac{1}{2} f^{‘’}\left( x_{k} \right) \left( x-x_{k} \right) ^{2}<br>$$<br>因为目标函数$f\left( x \right)$ 有极值的必要条件是在极值点处一阶导数为0，即：$f^{‘} \left( x \right) =0 $</p>
-<p>所以对上面的展开式两边同时求导（注意$x$才是变量，$x_{k}$ 是常量$\Rightarrow f^{‘} \left( x_{k} \right) ,f^{‘’} \left( x_{k} \right)$ 都是常量），并令$f^{‘} \left( x \right) =0$可得：<br>$$<br>f^{‘} \left( x_{k} \right) +f^{‘’} \left( x_{k} \right) \left( x-x_{k} \right) =0<br>$$<br>即：<br>$$<br>x=x_{k} -\frac{f^{‘} \left( x_{k} \right) }{f^{‘’} \left( x_{k} \right) }<br>$$<br>于是可以构造如下的迭代公式：<br>$$<br>x_{k+1} =x_{k} -\frac{f^{‘} \left( x_{k} \right) }{f^{‘’} \left( x_{k} \right) }<br>$$<br>这样，我们就可以利用该迭代式依次产生的序列$\left{x_{1},x_{2},…., x_{k} \right} $才逐渐逼近$f\left( x \right)$ 的极小值点了。</p>
+<h4 id="2-牛顿法的推导"><a href="#2-牛顿法的推导" class="headerlink" title="2.牛顿法的推导"></a>2.牛顿法的推导</h4><p>将目标函数$f\left( x \right)  在x_{k}$ 处进行二阶泰勒展开，可得：   </p>
+<script type="math/tex; mode=display">
+f\left( x \right) =f\left( x_{k} \right) +f^{'} \left( x_{k} \right) \left( x-x_{k} \right) +\frac{1}{2} f^{''}\left( x_{k} \right) \left( x-x_{k} \right) ^{2}</script><p>因为目标函数$f\left( x \right)$ 有极值的必要条件是在极值点处一阶导数为0，即：$f^{‘} \left( x \right) =0 $</p>
+<p>所以对上面的展开式两边同时求导（注意$x$才是变量，$x<em>{k}$ 是常量$\Rightarrow f^{‘} \left( x</em>{k} \right) ,f^{‘’} \left( x_{k} \right)$ 都是常量），并令$f^{‘} \left( x \right) =0$可得：  </p>
+<script type="math/tex; mode=display">
+f^{'} \left( x_{k} \right) +f^{''} \left( x_{k} \right) \left( x-x_{k} \right) =0</script><p>即：   </p>
+<script type="math/tex; mode=display">
+x=x_{k} -\frac{f^{'} \left( x_{k} \right) }{f^{''} \left( x_{k} \right) }</script><p>于是可以构造如下的迭代公式：</p>
+<script type="math/tex; mode=display">
+x_{k+1} =x_{k} -\frac{f^{'} \left( x_{k} \right) }{f^{''} \left( x_{k} \right) }</script><p>这样，我们就可以利用该迭代式依次产生的序列$\left\{x<em>{1},x</em>{2},…., x_{k} \right\} $才逐渐逼近$f\left( x \right)$ 的极小值点了。</p>
 <p>牛顿法的迭代示意图如下：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-e908f9721cc82415fa7e70c763351f3a_hd.jpg" alt=""></p>
 <p>上面讨论的是2维情况，高维情况的牛顿迭代公式是：</p>
@@ -404,23 +483,33 @@
 <p><img src="https://pic4.zhimg.com/80/v2-2891044fd02769c3148649e2a1a01fd5_hd.jpg" alt=""></p>
 <h4 id="3-牛顿法的过程"><a href="#3-牛顿法的过程" class="headerlink" title="3.牛顿法的过程"></a>3.牛顿法的过程</h4><ol>
 <li>给定初值$x_{0} $和精度阈值$\varepsilon $，并令$k=0$；</li>
-<li>计算$x_{k} $和$H_{k}$ ；</li>
-<li>若$\left| \left| g_{k} \right| \right| &lt;\varepsilon $则停止迭代；否则确定搜索方向：$d_{k} =-H_{k}^{-1} \cdot g_{k}$ ；</li>
-<li>计算新的迭代点：$x_{k+1} =x_{k} +d_{k} $；</li>
+<li>计算$x<em>{k} $和$H</em>{k}$ ；</li>
+<li>若$\left| \left| g<em>{k} \right| \right| &lt;\varepsilon $则停止迭代；否则确定搜索方向：$d</em>{k} =-H<em>{k}^{-1} \cdot g</em>{k}$ ；</li>
+<li>计算新的迭代点：$x<em>{k+1} =x</em>{k} +d_{k} $；</li>
 <li>令$k=k+1$，转至$2$。</li>
 </ol>
-<h3 id="6-7-阻尼牛顿法"><a href="#6-7-阻尼牛顿法" class="headerlink" title="6.7 阻尼牛顿法"></a>6.7 阻尼牛顿法</h3><h4 id="1-引入-1"><a href="#1-引入-1" class="headerlink" title="1.引入"></a>1.引入</h4><p>注意到，牛顿法的迭代公式中没有步长因子，是定步长迭代。对于非二次型目标函数，有时候会出现$f\left( x_{k+1} \right) &gt;f\left( x_{k} \right) $的情况，这表明，原始牛顿法不能保证函数值稳定的下降。在严重的情况下甚至会造成序列发散而导致计算失败。</p>
-<p>为消除这一弊病，人们又提出阻尼牛顿法。阻尼牛顿法每次迭代的方向仍然是$x_{k} $，但每次迭代会沿此方向做一维搜索，寻求最优的步长因子$\lambda _{k}$ ，即：</p>
+<h3 id="6-7-阻尼牛顿法"><a href="#6-7-阻尼牛顿法" class="headerlink" title="6.7 阻尼牛顿法"></a>6.7 阻尼牛顿法</h3><h4 id="1-引入-1"><a href="#1-引入-1" class="headerlink" title="1.引入"></a>1.引入</h4><p>注意到，牛顿法的迭代公式中没有步长因子，是定步长迭代。对于非二次型目标函数，有时候会出现$f\left( x<em>{k+1} \right) &gt;f\left( x</em>{k} \right) $的情况，这表明，原始牛顿法不能保证函数值稳定的下降。在严重的情况下甚至会造成序列发散而导致计算失败。</p>
+<p>为消除这一弊病，人们又提出阻尼牛顿法。阻尼牛顿法每次迭代的方向仍然是$x<em>{k} $，但每次迭代会沿此方向做一维搜索，寻求最优的步长因子$\lambda </em>{k}$ ，即：</p>
 <p>$\lambda <em>{k} = minf\left( x</em>{k} +\lambda d_{k} \right) $</p>
 <h4 id="2-算法过程"><a href="#2-算法过程" class="headerlink" title="2.算法过程"></a>2.算法过程</h4><ol>
 <li>给定初值$x_{0}$ 和精度阈值$\varepsilon$ ，并令$k=0$；</li>
-<li>计算$g_{k} （f\left( x \right) $在$x_{k}$ 处的梯度值）和$H_{k} $；</li>
-<li>若$\left| \left| g_{k} \right| \right| &lt;\varepsilon $则停止迭代；否则确定搜索方向：$d_{k} =-H_{k}^{-1} \cdot g_{k}$ ；</li>
-<li>利用$d_{k} =-H_{k}^{-1} \cdot g_{k} 得到步长\lambda <em>{k} $，并令$x</em>{k+1} =x_{k} +\lambda <em>{k} d</em>{k}$  </li>
+<li>计算$g<em>{k} （f\left( x \right) $在$x</em>{k}$ 处的梯度值）和$H_{k} $；</li>
+<li>若$\left| \left| g<em>{k} \right| \right| &lt;\varepsilon $则停止迭代；否则确定搜索方向：$d</em>{k} =-H<em>{k}^{-1} \cdot g</em>{k}$ ；</li>
+<li>利用$d<em>{k} =-H</em>{k}^{-1} \cdot g<em>{k} 得到步长\lambda </em>{k} $，并令$x<em>{k+1} =x</em>{k} +\lambda <em>{k} d</em>{k}$  </li>
 <li>令$k=k+1$，转至$2$。</li>
 </ol>
 <h3 id="6-8-拟牛顿法"><a href="#6-8-拟牛顿法" class="headerlink" title="6.8 拟牛顿法"></a>6.8 拟牛顿法</h3><h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h4><p>由于牛顿法每一步都要求解目标函数的Hessen矩阵的逆矩阵，计算量比较大（求矩阵的逆运算量比较大），因此提出一种改进方法，即通过正定矩阵近似代替Hessen矩阵的逆矩阵，简化这一计算过程，改进后的方法称为拟牛顿法。</p>
-<h4 id="2-拟牛顿法的推导"><a href="#2-拟牛顿法的推导" class="headerlink" title="2.拟牛顿法的推导"></a>2.拟牛顿法的推导</h4><p>先将目标函数在$x_{k+1} $处展开，得到：<br>$$<br>f\left( x \right) =f\left( x_{k+1} \right) +f^{‘} \left( x_{k+1} \right) \left( x-x_{k+1} \right) +\frac{1}{2} f^{‘’}\left( x_{k+1} \right) \left( x-x_{k+1} \right) ^{2}<br>$$<br>两边同时取梯度，得：<br>$$<br>f^{‘}\left( x \right) = f^{‘} \left( x_{k+1} \right) +f^{‘’} \left( x_{k+1} \right) \left( x-x_{k+1} \right)<br>$$<br>取上式中的$x=x_{k}$ ，得：<br>$$<br>f^{‘}\left( x_{k} \right) = f^{‘} \left( x_{k+1} \right) +f^{‘’} \left( x_{k+1} \right) \left( x-x_{k+1} \right)<br>$$<br>即：<br>$$<br>g_{k+1} -g_{k} =H_{k+1} \cdot \left( x_{k+1} -x_{k} \right)<br>$$<br>可得：<br>$$<br>H_{k}^{-1} \cdot \left( g_{k+1} -g_{k} \right) =x_{k+1} -x_{k}<br>$$<br>上面这个式子称为“拟牛顿条件”，由它来对$Hessen$矩阵做约束。</p>
+<h4 id="2-拟牛顿法的推导"><a href="#2-拟牛顿法的推导" class="headerlink" title="2.拟牛顿法的推导"></a>2.拟牛顿法的推导</h4><p>先将目标函数在$x_{k+1} $处展开，得到：  </p>
+<script type="math/tex; mode=display">
+f\left( x \right) =f\left( x_{k+1} \right) +f^{'} \left( x_{k+1} \right) \left( x-x_{k+1} \right) +\frac{1}{2} f^{''}\left( x_{k+1} \right) \left( x-x_{k+1} \right) ^{2}</script><p>两边同时取梯度，得：  </p>
+<script type="math/tex; mode=display">
+f^{'}\left( x \right) = f^{'} \left( x_{k+1} \right) +f^{''} \left( x_{k+1} \right) \left( x-x_{k+1} \right)</script><p>取上式中的$x=x_{k}$ ，得：   </p>
+<script type="math/tex; mode=display">
+f^{'}\left( x_{k} \right) = f^{'} \left( x_{k+1} \right) +f^{''} \left( x_{k+1} \right) \left( x-x_{k+1} \right)</script><p>即：   </p>
+<script type="math/tex; mode=display">
+g_{k+1} -g_{k} =H_{k+1} \cdot \left( x_{k+1} -x_{k} \right)</script><p>可得：  </p>
+<script type="math/tex; mode=display">
+H_{k}^{-1} \cdot \left( g_{k+1} -g_{k} \right) =x_{k+1} -x_{k}</script><p>上面这个式子称为“拟牛顿条件”，由它来对$Hessen$矩阵做约束。</p>
 
                 <hr>
                 
@@ -614,7 +703,22 @@
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="">
+<img class="wechat-title-img" src="null">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>

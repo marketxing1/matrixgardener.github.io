@@ -3,7 +3,7 @@
 
 <!-- Head tag -->
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="ma在 Github 上的个人博客">
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="/css/blog-style.css">
 
     <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+    <link rel="stylesheet" href="/css/syntax.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <style>
@@ -42,7 +42,7 @@
 </style>
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
-<!-- Navigation -->
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
@@ -176,12 +176,10 @@
 <p>机器学习就是无序的数据转换成有用信息。</p>
 <blockquote>
 <ol>
-<li>获取海量的数据   </li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
-<li>从海量数据中获取有用信息</li>
+<li><p>获取海量的数据   </p>
+</li>
+<li><p>从海量数据中获取有用信息</p>
+</li>
 </ol>
 </blockquote>
 <h3 id="机器学习场景"><a href="#机器学习场景" class="headerlink" title="机器学习场景"></a>机器学习场景</h3><blockquote>
@@ -231,12 +229,13 @@
 <li>此外，无监督学习还可以减少数据特征的维度，以便我们可以使用二维或三维图形更加直观地展示数据信息。</li>
 </ul>
 <p><strong>训练过程</strong>  </p>
-<p>&lt;img src=”<a href="https://pic4.zhimg.com/80/v2-711466f238bbb969618e6fe669a16a4f_hd.jpg&quot;,width=400,height=400&gt;" target="_blank" rel="noopener">https://pic4.zhimg.com/80/v2-711466f238bbb969618e6fe669a16a4f_hd.jpg&quot;,width=400,height=400&gt;</a></p>
+<p><img src="https://pic4.zhimg.com/80/v2-711466f238bbb969618e6fe669a16a4f_hd.jpg" ,width="400,height=400"></p>
 <p><strong>算法汇总</strong>   </p>
-<center><strong>用于执行分类、回归、聚类和密度估计的机器学习算法</strong></center>
+<center>**用于执行分类、回归、聚类和密度估计的机器学习算法**</center>
 
 
 
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -262,6 +261,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -279,6 +280,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>机器学习使用</p>
 <blockquote>
 <p>选择算法需要考虑的两个问题</p>
@@ -292,7 +294,7 @@
 <blockquote>
 <p>举例</p>
 </blockquote>
-<p>&lt;img src=”<a href="https://pic3.zhimg.com/80/v2-88ee740c5e4a2a2bdab7e08043321e08_hd.jpg&quot;,width=400,height=400&gt;" target="_blank" rel="noopener">https://pic3.zhimg.com/80/v2-88ee740c5e4a2a2bdab7e08043321e08_hd.jpg&quot;,width=400,height=400&gt;</a></p>
+<p><img src="https://pic3.zhimg.com/80/v2-88ee740c5e4a2a2bdab7e08043321e08_hd.jpg" ,width="400,height=400"></p>
 <blockquote>
 <p>机器学习开发流程</p>
 </blockquote>
@@ -511,7 +513,22 @@
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="">
+<img class="wechat-title-img" src="null">
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 </html>
