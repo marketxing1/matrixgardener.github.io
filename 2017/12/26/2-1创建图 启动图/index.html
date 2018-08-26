@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('//o7bkkhiex.bkt.clouddn.com/lion-blur-bg.jpg')
+        background-image: url('/source/image/img11.png')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -194,11 +194,11 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">m1=tf.constant([[<span class="number">3</span>,<span class="number">3</span>]])</span><br><span class="line">m2=tf.constant([[<span class="number">2</span>],[<span class="number">3</span>]])</span><br><span class="line">product=tf.matmul(m1,m2)</span><br><span class="line">print(product)</span><br></pre></td></tr></table></figure>
+                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">m1=tf.constant([[<span class="number">3</span>,<span class="number">3</span>]])</span><br><span class="line">m2=tf.constant([[<span class="number">2</span>],[<span class="number">3</span>]])</span><br><span class="line">product=tf.matmul(m1,m2)</span><br><span class="line">print(product)</span><br></pre></td></tr></table></figure>
 <pre><code>Tensor(&quot;MatMul_1:0&quot;, shape=(1, 1), dtype=int32)
-</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sess=tf.Session()</span><br><span class="line">result=sess.run(product)</span><br><span class="line">print(result)</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    result=sess.run(product)</span><br><span class="line">    print(result)</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sess=tf.Session()</span><br><span class="line">result=sess.run(product)</span><br><span class="line">print(result)</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    result=sess.run(product)</span><br><span class="line">    print(result)</span><br></pre></td></tr></table></figure>
 
                 <hr>
                 
@@ -392,7 +392,7 @@
 <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="/image/image11.png">
+<img class="wechat-title-img" src="/source/image/img11.png">
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
