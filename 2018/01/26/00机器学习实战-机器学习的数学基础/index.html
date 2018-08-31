@@ -1,200 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html>
 <head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="ma在 Github 上的个人博客">
-    <meta name="keyword" content="">
-    <meta name="theme-color" content="#600090">
-    <meta name="msapplication-navbutton-color" content="#600090">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
-    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Matrix" href="/atom.xml">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
-    <title>
-        
-        00机器学习实战-机器学习的数学基础｜Matrix&#39;s blog
-        
-    </title>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
 
-    <link rel="canonical" href="http://matrixgardener.github.io/2018/01/26/00机器学习实战-机器学习的数学基础/">
+    
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    
+    <title>00机器学习实战-机器学习的数学基础 | Matrix</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="机器学习" />
+    
+    <meta name="description" content="[TOC] 机器学习：机器学习的数学基础一、概述机器学习的特点就是：以计算机为工具和平台，以数据为研究对象，以学习方法为中心；是概率论、线性代数、数值计算、信息论、最优化理论和计算机科学等多个领域的交叉学科。 二、线性代数2.1 标量一个标量就是一个单独的数，一般用小写的的变量名称表示。 2.2 向量一个向量就是一列数，这些数是有序排列的。用过次序中的索引，我们可以确定每个单独的数。通常会赋予向量">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="00机器学习实战-机器学习的数学基础">
+<meta property="og:url" content="http://matrixgardener.github.io/2018/01/26/00机器学习实战-机器学习的数学基础/index.html">
+<meta property="og:site_name" content="Matrix">
+<meta property="og:description" content="[TOC] 机器学习：机器学习的数学基础一、概述机器学习的特点就是：以计算机为工具和平台，以数据为研究对象，以学习方法为中心；是概率论、线性代数、数值计算、信息论、最优化理论和计算机科学等多个领域的交叉学科。 二、线性代数2.1 标量一个标量就是一个单独的数，一般用小写的的变量名称表示。 2.2 向量一个向量就是一列数，这些数是有序排列的。用过次序中的索引，我们可以确定每个单独的数。通常会赋予向量">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-c0c16793d4662bfcdd7e112030096f94_r.jpg">
+<meta property="og:updated_time" content="2018-08-25T17:29:34.867Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="00机器学习实战-机器学习的数学基础">
+<meta name="twitter:description" content="[TOC] 机器学习：机器学习的数学基础一、概述机器学习的特点就是：以计算机为工具和平台，以数据为研究对象，以学习方法为中心；是概率论、线性代数、数值计算、信息论、最优化理论和计算机科学等多个领域的交叉学科。 二、线性代数2.1 标量一个标量就是一个单独的数，一般用小写的的变量名称表示。 2.2 向量一个向量就是一列数，这些数是有序排列的。用过次序中的索引，我们可以确定每个单独的数。通常会赋予向量">
+<meta name="twitter:image" content="https://pic4.zhimg.com/v2-c0c16793d4662bfcdd7e112030096f94_r.jpg">
+    
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/blog-style.css">
+    
+        <link rel="alternate" href="/" title="Matrix" type="application/atom+xml" />
+    
 
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+
+
 </head>
 
-<style>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">matrixgardener&#39;s blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Inici</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">Quant a</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
 
-    header.intro-header {
-        background-image: url('/image/img11.png')
-    }
-</style>
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="" class="animated fadeIn">
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
-" data-ishome = "false" >
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand animated pulse" href="/">
-                <span class="brand-logo">
-                    Matrix
-                </span>
-                's Blog
-            </a>
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cercar" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <!-- Known Issue, found by Hux:
-            <nav>'s height woule be hold on by its content.
-            so, when navbar scale out, the <nav> will cover tags.
-            also mask any touch event of tags, unfortunately.
-        -->
-        <!-- /.navbar-collapse -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-					
-                    
-                        
-							
-                        <li>
-                            <a href="/Tags/">Tags</a>
-                        </li>
-							
-						
-                    
-                        
-							
-								
-							
-						
-                    
-                        
-							
-                        <li>
-                            <a href="/categories/">categories</a>
-                        </li>
-							
-						
-                    
-					
-					
-						<li>
-							<a href="/about">About</a>
-						</li>
-					
-                </ul>
-            </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
         </div>
     </div>
-    <!-- /.container -->
-</nav>
+</div>
 <script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-//    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        // CLOSE
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        // OPEN
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'categories',
+            TAGS: 'etiquetes',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
 </script>
+<script src="/js/insight.js"></script>
 
-<!-- Main Content -->
-
-<!--only post-->
-
-
-<img class="wechat-title-img"
-     src="/image/img7.png">
-
-
-<style>
-    
-    header.intro-header {
-        background-image: url('/image/img7.png')
-    }
-
-    
-</style>
-
-<header class="intro-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <div class="post-heading">
-                    <h1>00机器学习实战-机器学习的数学基础</h1>
-                    
-                    <span class="meta">
-                         作者 matrixgardener
-                        <span>
-                          日期 2018-01-26
-                         </span>
-                    </span>
-                    <div class="tags text-center">
-                        
-                        <a class="tag" href="/tags/#机器学习"
-                           title="机器学习">机器学习</a>
-                        
+</div>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="post-title-haojen">
-        <span>
-            00机器学习实战-机器学习的数学基础
-        </span>
-    </div>
 </header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    Sense categoria
+    </h1>
+</div>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <!-- Post Container -->
-            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <p>[TOC]</p>
+                        <div class="main-body-content">
+                            <article id="post-00机器学习实战-机器学习的数学基础" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        00机器学习实战-机器学习的数学基础
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/01/26/00机器学习实战-机器学习的数学基础/" class="article-date">
+            <time datetime="2018-01-26T06:09:32.000Z" itemprop="datePublished">2018-01-26</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/Tags/机器学习/">机器学习</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>[TOC]</p>
 <h1 id="机器学习：机器学习的数学基础"><a href="#机器学习：机器学习的数学基础" class="headerlink" title="机器学习：机器学习的数学基础"></a>机器学习：机器学习的数学基础</h1><h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>机器学习的特点就是：以计算机为工具和平台，以数据为研究对象，以学习方法为中心；<br>是概率论、线性代数、数值计算、信息论、最优化理论和计算机科学等多个领域的交叉学科。</p>
 <h2 id="二、线性代数"><a href="#二、线性代数" class="headerlink" title="二、线性代数"></a>二、线性代数</h2><h3 id="2-1-标量"><a href="#2-1-标量" class="headerlink" title="2.1 标量"></a>2.1 标量</h3><p>一个标量就是一个单独的数，一般用小写的的变量名称表示。</p>
 <h3 id="2-2-向量"><a href="#2-2-向量" class="headerlink" title="2.2 向量"></a>2.2 向量</h3><p>一个向量就是一列数，这些数是有序排列的。用过次序中的索引，我们可以确定每个单独的数。通常会赋予向量粗体的小写名称。当我们需要明确表示向量中的元素时，我们会将元素排列成一个方括号包围的纵柱：</p>
@@ -537,199 +520,406 @@ g_{k+1} -g_{k} =H_{k+1} \cdot \left( x_{k+1} -x_{k} \right)</script><p>可得：
 <script type="math/tex; mode=display">
 H_{k}^{-1} \cdot \left( g_{k+1} -g_{k} \right) =x_{k+1} -x_{k}</script><p>上面这个式子称为“拟牛顿条件”，由它来对$Hessen$矩阵做约束。</p>
 
-                <hr>
-                
-
-                <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/2018/01/27/01机器学习实战-第1章 机器学习基础/" data-toggle="tooltip" data-placement="top"
-                           title="01机器学习实战-机器学习基础">&larr; Previous Post</a>
-                    </li>
-                    
-                    
-                    <li class="next">
-                        <a href="/2017/12/26/2-1创建图 启动图/" data-toggle="tooltip" data-placement="top"
-                           title="2-1创建图 启动图">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul>
-
-                
-
-                
-
-
-                <!--加入新的评论系统-->
-                
-
-                
-
-            </div>
-
-            <div class="hidden-xs col-sm-3 toc-col">
-                <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#机器学习：机器学习的数学基础"><span class="toc-text">机器学习：机器学习的数学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、概述"><span class="toc-text">一、概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、线性代数"><span class="toc-text">二、线性代数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-标量"><span class="toc-text">2.1 标量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-向量"><span class="toc-text">2.2 向量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-矩阵"><span class="toc-text">2.3 矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-张量"><span class="toc-text">2.4 张量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-范数"><span class="toc-text">2-5 范数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-特征分解"><span class="toc-text">2.6 特征分解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-奇异值分解（Singular-Value-Decomposition，SVD）"><span class="toc-text">2-7 奇异值分解（Singular Value Decomposition，SVD）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-8-Moore-Penrose伪逆"><span class="toc-text">2-8 Moore-Penrose伪逆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-9-几种常用的距离"><span class="toc-text">2-9 几种常用的距离</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、曼哈顿距离"><span class="toc-text">1、曼哈顿距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、欧氏距离"><span class="toc-text">2、欧氏距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、闵可夫斯基距离"><span class="toc-text">3、闵可夫斯基距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、切比雪夫距离"><span class="toc-text">4、切比雪夫距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、夹角余弦"><span class="toc-text">5、夹角余弦</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、汉明距离"><span class="toc-text">6、汉明距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、杰卡德相似系数"><span class="toc-text">7、杰卡德相似系数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、杰卡德距离"><span class="toc-text">8、杰卡德距离</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、概率"><span class="toc-text">三、概率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-为什么使用概率？"><span class="toc-text">3.1 为什么使用概率？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-随机变量"><span class="toc-text">3.2 随机变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-概率分布"><span class="toc-text">3.3 概率分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-条件概率"><span class="toc-text">3.4 条件概率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-贝叶斯公式"><span class="toc-text">3.5 贝叶斯公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-期望"><span class="toc-text">3.6 期望</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-7-方差"><span class="toc-text">3.7 方差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-8-协方差"><span class="toc-text">3.8 协方差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-9-常见分布函数"><span class="toc-text">3.9 常见分布函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1）0-1分布"><span class="toc-text">1）0-1分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2）几何分布"><span class="toc-text">2）几何分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3）二项分布"><span class="toc-text">3）二项分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4）高斯分布"><span class="toc-text">4）高斯分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5）指数分布"><span class="toc-text">5）指数分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6）泊松分布"><span class="toc-text">6）泊松分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-10-Lagrange乘子法"><span class="toc-text">3.10 Lagrange乘子法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-11、最大似然估计"><span class="toc-text">3-11、最大似然估计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、信息论"><span class="toc-text">四、信息论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-熵"><span class="toc-text">4.1 熵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-联合熵"><span class="toc-text">4.2 联合熵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-条件熵"><span class="toc-text">4.3 条件熵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-相对熵"><span class="toc-text">4.4 相对熵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-互信息"><span class="toc-text">4.5 互信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6、最大熵模型"><span class="toc-text">4-6、最大熵模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、-数值计算"><span class="toc-text">五、 数值计算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-上溢和下溢"><span class="toc-text">5.1 上溢和下溢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-计算复杂性与NP问题"><span class="toc-text">5.2 计算复杂性与NP问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-算法复杂性"><span class="toc-text">1.算法复杂性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-确定性和非确定性"><span class="toc-text">2.确定性和非确定性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-NP问题"><span class="toc-text">3.NP问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-数值计算"><span class="toc-text">5.3 数值计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、最优化"><span class="toc-text">六、最优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-最优化理论"><span class="toc-text">6.1 最优化理论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-最优化问题的数学描述"><span class="toc-text">6.2 最优化问题的数学描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-凸集与凸集分离定理"><span class="toc-text">6.3 凸集与凸集分离定理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-凸集"><span class="toc-text">1.凸集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-超平面和半空间"><span class="toc-text">2.超平面和半空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-凸集分离定理"><span class="toc-text">3.凸集分离定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-凸函数"><span class="toc-text">4.凸函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-梯度下降算法"><span class="toc-text">6.4 梯度下降算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-引入"><span class="toc-text">1.引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-梯度下降法"><span class="toc-text">2.梯度下降法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-随机梯度下降算法"><span class="toc-text">6.5 随机梯度下降算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-牛顿法"><span class="toc-text">6.6 牛顿法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-牛顿法介绍"><span class="toc-text">1.牛顿法介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-牛顿法的推导"><span class="toc-text">2.牛顿法的推导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-牛顿法的过程"><span class="toc-text">3.牛顿法的过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-7-阻尼牛顿法"><span class="toc-text">6.7 阻尼牛顿法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-引入-1"><span class="toc-text">1.引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-算法过程"><span class="toc-text">2.算法过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-8-拟牛顿法"><span class="toc-text">6.8 拟牛顿法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-概述"><span class="toc-text">1.概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-拟牛顿法的推导"><span class="toc-text">2.拟牛顿法的推导</span></a></li></ol></li></ol></li></ol></li></ol>
-                </div>
-            </div>
         </div>
+        <footer class="article-footer">
+            
 
-        <div class="row">
-            <!-- Sidebar Container -->
 
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
 
-                <!-- Featured Tags -->
-                
-                <section>
-                    <!-- no hr -->
-                    <h5 class="text-center">
-                        <a href="/tags/">FEATURED TAGS</a>
-                    </h5>
-                    <div class="tags">
-                        
-                        <a class="tag" href="/tags/#机器学习"
-                           title="机器学习">机器学习</a>
-                        
-                    </div>
-                </section>
-                
+    <a data-url="http://matrixgardener.github.io/2018/01/26/00机器学习实战-机器学习的数学基础/" data-id="cjli2dqpd000lk8upj685uyam" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
 
-                <!-- Friends Blog -->
-                
-            </div>
-        </div>
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
 
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
 
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
 
 
 
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>seguir:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/01/27/01机器学习实战-第1章 机器学习基础/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">més nou</strong>
+        <p class="article-nav-title">
+        
+            01机器学习实战-机器学习基础
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/12/26/2-1创建图 启动图/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">antic</strong>
+        <p class="article-nav-title">2-1创建图 启动图</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/30/欢迎来到我的博客/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/30/欢迎来到我的博客/" class="title">your-post-name</a></p>
+                            <p class="item-date"><time datetime="2018-07-30T10:04:27.000Z" itemprop="datePublished">2018-07-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/30/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/30/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2018-07-30T04:37:35.255Z" itemprop="datePublished">2018-07-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/02/16/七堂极简物理课/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/02/16/七堂极简物理课/" class="title">《七堂极简物理课》</a></p>
+                            <p class="item-date"><time datetime="2018-02-16T06:09:32.000Z" itemprop="datePublished">2018-02-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/28/03机器学习实战-第3章 决策树/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pic4.zhimg.com/80/v2-4a601bdc74abb553c0873fbd61597035_hd.jpg)" alt="03机器学习实战-第3章 决策树" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/01/28/03机器学习实战-第3章 决策树/" class="title">03机器学习实战-第3章 决策树</a></p>
+                            <p class="item-date"><time datetime="2018-01-28T11:07:35.000Z" itemprop="datePublished">2018-01-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/01/27/01机器学习实战-第1章 机器学习基础/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pic4.zhimg.com/80/v2-711466f238bbb969618e6fe669a16a4f_hd.jpg)" alt="01机器学习实战-机器学习基础" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/01/27/01机器学习实战-第1章 机器学习基础/" class="title">01机器学习实战-机器学习基础</a></p>
+                            <p class="item-date"><time datetime="2018-01-27T09:19:04.000Z" itemprop="datePublished">2018-01-27</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">arxius</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
 
 
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">etiquetes</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Tags/Python学习/">Python学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Tags/主题测试/">主题测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Tags/主题测试231/">主题测试231</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Tags/读书笔记/">读书笔记</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
 
-<!-- Footer -->
-<!-- Footer -->
-<footer>
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">etiqueta cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/Tags/Python学习/" style="font-size: 10px;">Python学习</a> <a href="/Tags/主题测试/" style="font-size: 10px;">主题测试</a> <a href="/Tags/主题测试231/" style="font-size: 10px;">主题测试231</a> <a href="/Tags/机器学习/" style="font-size: 20px;">机器学习</a> <a href="/Tags/读书笔记/" style="font-size: 10px;">读书笔记</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
-                <br>
-                <ul class="list-inline text-center">
-                
-                
-                
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/matrixgardener">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
-                
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 matrixgardener</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
 
-                
-
-                
-
-                
-                    <li>
-                        <a target="_blank"  href="https://github.com/matrixgardener">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                
-
-                
-
-                </ul>
-                <p class="copyright text-muted">
-                    Copyright &copy; Matrix 2018
-                    <br>
-                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
-                    <br>
-                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
-                </p>
 
             </div>
         </div>
     </div>
 </footer>
 
-<!-- jQuery -->
-<script src="/js/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/blog.js"></script>
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- jquery.tagcloud.js -->
-<script>
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async("http://matrixgardener.github.io/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-<!--fastClick.js -->
-<script>
-    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-<!-- Google Analytics -->
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://matrixgardener.github.io/2018/01/26/00机器学习实战-机器学习的数学基础/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
 
 
 
-<!-- Baidu Tongji -->
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
 
 
-<!-- swiftype -->
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','','2.0.0');
-</script>
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<!-- 动态背景 -->
-<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-
-<!--wechat title img-->
-<img class="wechat-title-img" src="/image/img11.png">
+    </div>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -744,7 +934,6 @@ H_{k}^{-1} \cdot \left( g_{k+1} -g_{k} \right) =x_{k+1} -x_{k}</script><p>上面
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":120,"height":240,"position":"right","hOffset":-20,"vOffset":-40},"mobile":{"show":true,"scale":0.5,"motion":true},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":120,"height":240,"position":"right","hOffset":-20,"vOffset":-40},"mobile":{"show":true,"scale":0.5,"motion":true},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>
