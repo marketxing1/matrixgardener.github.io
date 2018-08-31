@@ -16,7 +16,7 @@
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="03机器学习实战-第3章 决策树">
-<meta property="og:url" content="http://matrixgardener.github.io/2018/01/28/03机器学习实战-第3章 决策树/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/01/28/03机器学习实战-第3章 决策树/index.html">
 <meta property="og:site_name" content="Matrix">
 <meta property="og:description" content="[TOC] 第3章 决策树本章内容  决策树简介   在数据集中度量一致性   使用递归构造决策树      使用Matplotlib绘制树形图      决策树的构造 优点：计算复杂度不高，输出易于理解，对中间值得确实不敏感，可以处理不相关特征数据。缺点：可能会产生过度匹配问题使用数据类型：数值型和标称型    创建分支伪代码函数createBranch()如下：123456789检测数据集中的">
 <meta property="og:locale" content="default">
@@ -76,13 +76,13 @@
                         <ul id="main-nav">
                             
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Inici</a>
+                                    <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
                                         
                                     
                                 <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">Quant a</a>
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
                                 </li>
                             
                         </ul>
@@ -90,7 +90,7 @@
                             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Cercar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -111,8 +111,8 @@
         TRANSLATION: {
             POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'categories',
-            TAGS: 'etiquetes',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -138,7 +138,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    Sense categoria
+    uncategorized
     </h1>
 </div>
 
@@ -170,7 +170,7 @@
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/Tags/机器学习/">机器学习</a>
+        <a class="tag-link" href="/tags/机器学习/">机器学习</a>
     </div>
 
             </div>
@@ -189,7 +189,7 @@
 <h2 id="决策树的构造"><a href="#决策树的构造" class="headerlink" title="决策树的构造"></a>决策树的构造</h2><blockquote>
 <p>优点：计算复杂度不高，输出易于理解，对中间值得确实不敏感，可以处理不相关特征数据。<br>缺点：可能会产生过度匹配问题<br>使用数据类型：数值型和标称型  </p>
 </blockquote>
-<p><strong>创建分支伪代码函数createBranch()如下：</strong><br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">检测数据集中的每个指向是否属于同一个分类：</span><br><span class="line">    <span class="keyword">IF</span> <span class="keyword">so</span> <span class="keyword">return</span> 类标签</span><br><span class="line">    <span class="keyword">Else</span></span><br><span class="line">        寻找划分数据集的最好特征</span><br><span class="line">        划分数据集</span><br><span class="line">        创建分支节点</span><br><span class="line">            <span class="keyword">for</span> 每个划分的子集</span><br><span class="line">                调用函数createBranch并增加返回结果到分支节点中</span><br><span class="line">        <span class="keyword">return</span> 分支节点</span><br></pre></td></tr></table></figure></p>
+<p><strong>创建分支伪代码函数createBranch()如下：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">检测数据集中的每个指向是否属于同一个分类：</span><br><span class="line">    IF so return 类标签</span><br><span class="line">    Else</span><br><span class="line">        寻找划分数据集的最好特征</span><br><span class="line">        划分数据集</span><br><span class="line">        创建分支节点</span><br><span class="line">            for 每个划分的子集</span><br><span class="line">                调用函数createBranch并增加返回结果到分支节点中</span><br><span class="line">        return 分支节点</span><br></pre></td></tr></table></figure></p>
 <p>上述是一个递归函数</p>
 <h2 id="决策树的一般流程"><a href="#决策树的一般流程" class="headerlink" title="决策树的一般流程"></a>决策树的一般流程</h2><blockquote>
 <p>(1) 收集数据：可以使用任何方法。<br>(2) 准备数据：树构造算法只适用于标称型数据，因此数值型数据必须离散化。<br>(3) 分析数据：可以使用任何方法，构造树完成之后，我们应该检查图形是否符合预期。<br>(4) 训练算法：构造树的数据结构。<br>(5) 测试算法：使用经验树计算错误率。<br>(6) 使用算法：词步骤可以使用于任何监督学习算法，而使用决策树可能更好地理解数据的内在含义。  </p>
@@ -506,7 +506,7 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
 
 
 
-    <a data-url="http://matrixgardener.github.io/2018/01/28/03机器学习实战-第3章 决策树/" data-id="cjli2dqo7000jk8upfl7esv2h" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="http://yoursite.com/2018/01/28/03机器学习实战-第3章 决策树/" data-id="cjli6rkl7000gagup5jr7ypqm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -587,7 +587,7 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
                     <aside id="sidebar">
     <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
     <div class="sidebar-top">
-        <p>seguir:</p>
+        <p>follow:</p>
         <ul class="social-links">
             
                 
@@ -616,7 +616,7 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
             
                 
                 <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                    <a class="social-tooltip" title="github" href="https://github.com/matrixgardener" target="_blank" rel="noopener">
                         <i class="icon fa fa-github"></i>
                     </a>
                 </li>
@@ -645,7 +645,7 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
 <nav id="article-nav">
     
         <a href="/2018/02/16/七堂极简物理课/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">més nou</strong>
+        <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
             《七堂极简物理课》
@@ -656,7 +656,7 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
     
     
         <a href="/2018/01/27/01机器学习实战-第1章 机器学习基础/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">antic</strong>
+        <strong class="article-nav-caption">older</strong>
         <p class="article-nav-title">01机器学习实战-机器学习基础</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
@@ -786,7 +786,7 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">arxius</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
@@ -796,9 +796,9 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
             
                 
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">etiquetes</h3>
+        <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Tags/Python学习/">Python学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Tags/主题测试/">主题测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Tags/主题测试231/">主题测试231</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/Tags/读书笔记/">读书笔记</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python学习/">Python学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主题测试/">主题测试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -806,9 +806,9 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
             
                 
     <div class="widget-wrap widget-float">
-        <h3 class="widget-title">etiqueta cloud</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/Tags/Python学习/" style="font-size: 10px;">Python学习</a> <a href="/Tags/主题测试/" style="font-size: 10px;">主题测试</a> <a href="/Tags/主题测试231/" style="font-size: 10px;">主题测试231</a> <a href="/Tags/机器学习/" style="font-size: 20px;">机器学习</a> <a href="/Tags/读书笔记/" style="font-size: 10px;">读书笔记</a>
+            <a href="/tags/Python学习/" style="font-size: 10px;">Python学习</a> <a href="/tags/主题测试/" style="font-size: 15px;">主题测试</a> <a href="/tags/机器学习/" style="font-size: 20px;">机器学习</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a>
         </div>
     </div>
 
@@ -864,7 +864,7 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://matrixgardener.github.io/2018/01/28/03机器学习实战-第3章 决策树/';
+    var disqus_url = 'http://yoursite.com/2018/01/28/03机器学习实战-第3章 决策树/';
     
     (function() {
     var dsq = document.createElement('script');
@@ -892,6 +892,11 @@ Gain\_ratio(Y,X)=\frac{Gain(Y,X)}{H(X)}</script><p>其中，分子为信息增�
     
         <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     
 
 
