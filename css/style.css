@@ -89,7 +89,7 @@
 .article-entry ol,
 .widget dl,
 .article-entry dl {
-  line-height: 1.6em;
+  line-height: 1.5em;
 }
 .widget ul ul,
 .article-entry ul ul,
@@ -230,7 +230,7 @@ body,
 }
 body {
   background: #eaeaea;
-  font: 14px "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
+  font: 18px "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
   -webkit-text-size-adjust: 100%;
 }
 code {
@@ -244,11 +244,11 @@ code {
 }
 .container {
   position: relative;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 .container-inner {
-  max-width: 1120px;
-  min-width: 320px;
+  max-width: 1380px;
+  min-width: 340px;
   width: 100%;
   margin: 0 auto;
 }
@@ -274,14 +274,14 @@ code {
 .logo {
   display: block;
   padding: 10px 0;
-  width: 185px;
-  height: 80px;
+  width: 245px;
+  height: 110px;
   background-image: url("images/logo.png");
   background-position: 0px 10px;
   background-repeat: no-repeat;
-  -webkit-background-size: 185px 80px;
-  -moz-background-size: 185px 80px;
-  background-size: 185px 80px;
+  -webkit-background-size: 245px 110px;
+  -moz-background-size: 245px 110px;
+  background-size: 245px 110px;
 }
 .main-body {
   margin-top: -60px;
@@ -378,7 +378,7 @@ code {
 #header-title .subtitle {
   font-size: 16px;
   font-style: italic;
-  line-height: 90px;
+  line-height: 120px;
   color: rgba(255,255,255,0.7);
   text-shadow: 0 1px rgba(0,0,0,0.2);
 }
@@ -419,7 +419,7 @@ code {
   line-height: 20px;
   padding: 15px 14px;
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
   position: relative;
   cursor: pointer;
 }
@@ -528,7 +528,7 @@ code {
   border: none !important;
   outline: none !important;
   background: none !important;
-  line-height: 1.6em;
+  line-height: 1.5em;
   -webkit-transition: 0.2s ease-in;
   -moz-transition: 0.2s ease-in;
   -ms-transition: 0.2s ease-in;
@@ -708,7 +708,7 @@ code {
   margin-bottom: 6px;
 }
 .widget {
-  line-height: 1.6em;
+  line-height: 1.5em;
   word-wrap: break-word;
   font-size: 0.9em;
   color: #777;
@@ -760,7 +760,7 @@ code {
 .widget-list ol li {
   margin: 10px 0;
   padding-bottom: 10px;
-  font-size: 15px;
+  font-size: 19px;
   border-bottom: 1px solid #e4e4e4;
 }
 .widget-list ul li:last-child,
@@ -801,7 +801,7 @@ code {
   padding-bottom: 0;
 }
 .widget-float a {
-  font-size: 15px;
+  font-size: 19px;
 }
 #recent-post li {
   padding: 10px 0 10px 94px;
@@ -1029,9 +1029,9 @@ code {
   position: relative;
   color: #aaa;
   font-size: 16px;
-  line-height: 1.6em;
+  line-height: 1.5em;
   overflow: hidden;
-  height: 6.4em;
+  height: 6em;
 }
 .article-summary:hover .thumbnail .thumbnail-image {
   opacity: 0.7;
@@ -1065,7 +1065,7 @@ a.article-title:hover {
   color: #006bde;
 }
 .article-meta {
-  line-height: 1.6em;
+  line-height: 1.5em;
 }
 .article-meta:before,
 .article-meta:after {
@@ -1097,7 +1097,7 @@ a.article-title:hover {
   margin-right: 6px;
 }
 .article-summary .article-meta {
-  height: 1.6em;
+  height: 1.5em;
   overflow: hidden;
 }
 .article-summary .article-meta a {
@@ -1113,7 +1113,7 @@ a.article-title:hover {
   color: #555;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.6em;
+  line-height: 1.5em;
 }
 .article-entry:before,
 .article-entry:after {
@@ -1125,7 +1125,7 @@ a.article-title:hover {
 }
 .article-entry p,
 .article-entry table {
-  margin: 1.6em 0;
+  margin: 1.5em 0;
 }
 .article-entry h1,
 .article-entry h2,
@@ -1154,8 +1154,8 @@ a.article-title:hover {
 .article-entry ul,
 .article-entry ol,
 .article-entry dl {
-  margin-top: 1.6em;
-  margin-bottom: 1.6em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
   list-style-position: outside;
   padding-left: 1.4em;
 }
@@ -1208,8 +1208,8 @@ a.article-title:hover {
   font-family: 'FontAwesome';
 }
 .article-entry blockquote footer {
-  font-size: 14px;
-  margin: 1.6em 0;
+  font-size: 18px;
+  margin: 1.5em 0;
   font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", sans-serif;
 }
 .article-entry blockquote footer cite:before {
@@ -1270,10 +1270,10 @@ a.article-title:hover {
   text-shadow: 0 1px #0056b2;
 }
 .article-footer {
-  font-size: 14px;
-  line-height: 1.6em;
+  font-size: 18px;
+  line-height: 1.5em;
   border-top: 1px solid #ddd;
-  padding-top: 1.6em;
+  padding-top: 1.5em;
 }
 .article-footer:before,
 .article-footer:after {
@@ -1426,7 +1426,7 @@ a.article-title:hover {
   background: #000;
   position: relative;
   text-align: center;
-  margin: 1.6em 0;
+  margin: 1.5em 0;
 }
 .article-gallery .gallery-item {
   display: none;
@@ -1505,7 +1505,7 @@ a.article-title:hover {
 }
 .archive-year-wrap {
   padding: 18px 30px 17px;
-  font-size: 16px;
+  font-size: 20px;
   color: #666;
   border-bottom: 1px solid #eee;
 }
@@ -1543,7 +1543,7 @@ a.article-title:hover {
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
   transition: color 0.2s;
-  line-height: 1.6em;
+  line-height: 1.5em;
 }
 .archive-article-title:hover {
   color: #006bde;
@@ -1622,7 +1622,7 @@ a.article-title:hover {
   background: #33363b;
   margin-top: 60px;
   color: #aaa;
-  line-height: 1.6em;
+  line-height: 1.5em;
 }
 #footer a {
   color: #ccc;
@@ -1658,11 +1658,11 @@ a.article-title:hover {
   line-height: 22px;
 }
 #footer .logo {
-  width: 148px;
-  height: 64px;
-  -webkit-background-size: 148px 64px;
-  -moz-background-size: 148px 64px;
-  background-size: 148px 64px;
+  width: 196px;
+  height: 88px;
+  -webkit-background-size: 196px 88px;
+  -moz-background-size: 196px 88px;
+  background-size: 196px 88px;
 }
 i.icon {
   display: inline-block;
@@ -1817,9 +1817,9 @@ i.icon:before {
   display: block;
   overflow-x: auto;
   padding: 15px 20px;
-  font-size: 14px;
+  font-size: 18px;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
-  line-height: 22.400000000000002px;
+  line-height: 27px;
 }
 .highlight table {
   margin: 0;
@@ -2049,7 +2049,7 @@ i.icon:before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 18px;
   }
   #header .nav-container #main-nav .main-nav-list-item:before,
   #header .nav-container #main-nav .main-nav-list-link:before,
@@ -2093,10 +2093,10 @@ i.icon:before {
     float: none;
   }
   #header .nav-container #sub-nav .search-form:before {
-    font-size: 14px;
+    font-size: 18px;
   }
   #header .nav-container #sub-nav .search-form-input {
-    font-size: 14px;
+    font-size: 18px;
     width: 90%;
   }
   .main-body-inner {
