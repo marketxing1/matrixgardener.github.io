@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Matrix">
 <meta property="og:description" content="补充编程知识，工作学习中用到。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-14T15:16:07.869Z">
+<meta property="og:updated_time" content="2018-11-15T15:12:19.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ &amp;&amp; MFC Research">
 <meta name="twitter:description" content="补充编程知识，工作学习中用到。">
@@ -186,6 +186,16 @@
 <p>《C++ 编程思想》</p>
 <p><strong>public：</strong><br><strong>private：</strong>除了该类别的创建者和该类别的内部成员函数之外，任何人都不能访问这些定义。<br><strong>protect：</strong>与private类似，但是继承的类可以访问<strong>protect</strong>成员，但不能访问<strong>private</strong>成员。</p>
 <p><strong>实现的重用</strong></p>
+<p>OOP的论域就是抽象数据类型、继承和多态性。<br> C++采取的办法是把效率控制<br> 将对象存放在栈中或静态存储区域中，存储和生命周期可以在编程时确定。栈是内存中一个区域，可以直接由微处理器在程序执行期间存放数据。<br>第二种办法是在堆（heap）的区域动态创建对象。<em>new、delete</em></p>
+<p><strong>语言翻译的过程：</strong><br> 从容易理解的形式（源代码）转化成计算机能执行的形式（机器指令）。通常，翻译器分为两类：<em>解释器</em>（interpreter）和<em>编译器</em>（compiler）。</p>
+<p><strong>编译过程：</strong></p>
+<ol>
+<li>对源代码执行预处理。<strong><em>预处理器</em></strong>（preprocessor）是用程序员（利用预处理器指令）定义好的模式代替源代码中的模式。预处理指令来节省输入，增加代码的可读性。预处理过的代码通常存放在一个中间文件中。</li>
+<li>编译一般分两遍：<br>a. 首先对预处理过的代码进行语法分析。有时候，在编译的第一遍和第二遍之间使用全局优化器（global optimizer）来生成更短更快的代码。<br>b. 编译的第二遍，由代码生成器（code generator）遍历语法分析树，把树的每个节点转化成汇编语言或机器代码。最后生成目标模块（通常是，一个以.o或.obj为扩展名的文件）。有时也会在第二遍中使用窥孔优化器（peephole optimizer）从相邻一段代码中查找冗余汇编语句。</li>
+</ol>
+<p><strong>连接器：</strong>把一组目标模块连接成为一个可执行程序，操作系统可以装载和运行它。连接器能搜索称为“库”的特殊文件来处理它所有的应用，库将一组目标模块包含在一个文件中。库由一个被称为<strong>库管理器（librarian）</strong>的程序来创建和维护。</p>
+<p><strong>声明（declaration）和定义（definition）区别：</strong></p>
+<p>声明是向编译器介绍名字——标识符。（它告诉编译器“这个函数或这个变量在某处可找到，它的模样像什么”。）<br>定义是在说：“在这里建立变量”或“在这里建立函数”。它为名字分配存储空间。</p>
 
         </div>
         <footer class="article-footer">
@@ -193,7 +203,7 @@
 
 
 
-    <a data-url="http://matrixgardener.github.io/2018/11/06/C++&& MFC Research/" data-id="cjohh7q5m0003y0poj0o8lpi6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://matrixgardener.github.io/2018/11/06/C++&& MFC Research/" data-id="cjoiv3kwa0003nwpoi90optb8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -462,7 +472,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">7</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Book/">Book</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Finance/">Finance</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Philosophy/">Philosophy</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Peoplel/">Peoplel</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随想/">随想</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随想/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Book/">Book</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Finance/">Finance</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Philosophy/">Philosophy</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Peoplel/">Peoplel</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随想/">随想</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随想/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -472,7 +482,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
