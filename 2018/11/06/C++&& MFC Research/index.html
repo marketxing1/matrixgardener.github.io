@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Matrix">
 <meta property="og:description" content="补充编程知识，工作学习中用到。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-15T15:12:19.787Z">
+<meta property="og:updated_time" content="2018-11-16T10:41:48.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ &amp;&amp; MFC Research">
 <meta name="twitter:description" content="补充编程知识，工作学习中用到。">
@@ -78,7 +78,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/">Essay</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/Book/">Book</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/Finance/">Finance</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/Philosophy/">Philosophy</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Peoplel/">Peoplel</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/">Sports</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/随想/">随想</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/随想/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/随笔/">随笔</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/">Essay</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/Book/">Book</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/Finance/">Finance</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/Philosophy/">Philosophy</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Peoplel/">Peoplel</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/">Sports</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/随想/">随想</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/随想/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/随笔/">随笔</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -193,9 +193,15 @@
 <li>对源代码执行预处理。<strong><em>预处理器</em></strong>（preprocessor）是用程序员（利用预处理器指令）定义好的模式代替源代码中的模式。预处理指令来节省输入，增加代码的可读性。预处理过的代码通常存放在一个中间文件中。</li>
 <li>编译一般分两遍：<br>a. 首先对预处理过的代码进行语法分析。有时候，在编译的第一遍和第二遍之间使用全局优化器（global optimizer）来生成更短更快的代码。<br>b. 编译的第二遍，由代码生成器（code generator）遍历语法分析树，把树的每个节点转化成汇编语言或机器代码。最后生成目标模块（通常是，一个以.o或.obj为扩展名的文件）。有时也会在第二遍中使用窥孔优化器（peephole optimizer）从相邻一段代码中查找冗余汇编语句。</li>
 </ol>
-<p><strong>连接器：</strong>把一组目标模块连接成为一个可执行程序，操作系统可以装载和运行它。连接器能搜索称为“库”的特殊文件来处理它所有的应用，库将一组目标模块包含在一个文件中。库由一个被称为<strong>库管理器（librarian）</strong>的程序来创建和维护。</p>
+<p><strong>连接器：</strong>把一组目标模块连接成为一个可执行程序，操作系统可以装载和运行它。连接器能搜索称为“库”的特殊文件来处理它所有的应用，库将一组目标模块包含在一个文件中。库由一个被称为<strong>库管理器（librarian）</strong>的程序来创建和维护。<br><strong>静态类型检查：</strong>是编译器在第一遍中完成的。类型检查是检查函数是否争取无法使用，以防止许多程序设计的错误。<br><strong>分段编译工具</strong></p>
 <p><strong>声明（declaration）和定义（definition）区别：</strong></p>
 <p>声明是向编译器介绍名字——标识符。（它告诉编译器“这个函数或这个变量在某处可找到，它的模样像什么”。）<br>定义是在说：“在这里建立变量”或“在这里建立函数”。它为名字分配存储空间。</p>
+<p><strong>包含头文件：</strong>大部分的库包含众多头文件，当堆喝血函数变量做外部声明时，C/C++使用“头文件”（header file）。头文件是一个包含某个库的外部声明函数和变量的文件。<br><strong>&lt; &gt;：</strong>预处理器是以特定方式来寻找为了将，一般是环境中或编译器命令行指定的某种寻找路径。<br><strong>“ ”：</strong>预处理器以“由实现定义的方式”来寻找文件。它通常是从当前目录开始寻找，如果文件没找到，那么include命令就按与尖括号同样的方式重新开始寻找。</p>
+<p><strong>使用库文件：</strong><br>必须：<br>1）包含库的头文件<br>2）使用库中函数<br>3）把库连接进可执行程序</p>
+<p><strong>名字空间：</strong>namespace关键字，库或程序中每一个C++定义集被封装在一个名字空间中，如果其他的定义中有相同的名字，但它们在不同的名字空间，就不会产生冲突。</p>
+<p>C++库的“容器”与“算法”和被称为STL的东西混淆。<br>STL（标准模板类库，Standard Template Library）</p>
+<p>vector类似一个模板（template），也就是说它可以用于不同类型。可以创建Shape的vector、Cat的vector和String的vector等。用模板几乎可以创建“任何事物的类”。把类型名输入到尖括号内，让编译器知道vector所用的类（在这种情况下就是vector将要保存的类）。所以，string的vector表示为vector<string>。这样，就定制了只装string对象的vector。</string></p>
+<p>把东西放入取出容器的办法，为了在vector末尾后追加一个新元素，可以使用成员函数push_back()（注意，对于一个具体对象要使用“.”来调用它的成员函数）。</p>
 
         </div>
         <footer class="article-footer">
@@ -203,7 +209,7 @@
 
 
 
-    <a data-url="http://matrixgardener.github.io/2018/11/06/C++&& MFC Research/" data-id="cjoiv3kwa0003nwpoi90optb8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://matrixgardener.github.io/2018/11/06/C++&& MFC Research/" data-id="cjoncarj70003wkpoidt9n54a" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -341,6 +347,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2018/11/10/Python之禅/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Python之禅
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2018/10/04/极简欧洲史/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -362,6 +378,46 @@
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/18/Python-Learning/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2018/11/18/Python-Learning/" class="title">Python_Learning</a></p>
+                            <p class="item-date"><time datetime="2018-11-18T07:10:36.000Z" itemprop="datePublished">2018-11-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/10/Python之禅/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2018/11/10/Python之禅/" class="title">Python之禅</a></p>
+                            <p class="item-date"><time datetime="2018-11-10T09:06:10.000Z" itemprop="datePublished">2018-11-10</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -423,46 +479,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/07/30/宽客人生：从物理学家到数量金融大师的传奇/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/宽客人生.jpg)" alt="宽客人生：从物理学家到数量金融大师的传奇" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Essay/">Essay</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Essay/Finance/">Finance</a></p>
-                            <p class="item-title"><a href="/2018/07/30/宽客人生：从物理学家到数量金融大师的传奇/" class="title">宽客人生：从物理学家到数量金融大师的传奇</a></p>
-                            <p class="item-date"><time datetime="2018-07-30T10:04:27.000Z" itemprop="datePublished">2018-07-30</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/07/30/欢迎来到我的博客/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/image/img8.jpg)" alt="欢迎来到我的博客" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Sports/">Sports</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Sports/Baseball/">Baseball</a></p>
-                            <p class="item-title"><a href="/2018/07/30/欢迎来到我的博客/" class="title">欢迎来到我的博客</a></p>
-                            <p class="item-date"><time datetime="2018-07-30T10:04:27.000Z" itemprop="datePublished">2018-07-30</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -472,7 +488,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Book/">Book</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Finance/">Finance</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Philosophy/">Philosophy</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Peoplel/">Peoplel</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随想/">随想</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随想/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">2</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Book/">Book</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Finance/">Finance</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Philosophy/">Philosophy</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Peoplel/">Peoplel</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随想/">随想</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随想/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -482,7 +498,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -492,7 +508,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fight/">Fight</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Injury/">Injury</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python学习/">Python学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shocking/">Shocking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Study/">Study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主题测试/">主题测试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随想/">随想</a><span class="tag-list-count">7</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fight/">Fight</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Injury/">Injury</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python学习/">Python学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shocking/">Shocking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Study/">Study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主题测试/">主题测试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随想/">随想</a><span class="tag-list-count">7</span></li></ul>
         </div>
     </div>
 
@@ -502,7 +518,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Essay/" style="font-size: 20px;">Essay</a> <a href="/tags/Fight/" style="font-size: 10px;">Fight</a> <a href="/tags/Injury/" style="font-size: 10px;">Injury</a> <a href="/tags/Python学习/" style="font-size: 10px;">Python学习</a> <a href="/tags/Shocking/" style="font-size: 10px;">Shocking</a> <a href="/tags/Study/" style="font-size: 10px;">Study</a> <a href="/tags/主题测试/" style="font-size: 12.5px;">主题测试</a> <a href="/tags/机器学习/" style="font-size: 15px;">机器学习</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/随想/" style="font-size: 17.5px;">随想</a>
+            <a href="/tags/Essay/" style="font-size: 20px;">Essay</a> <a href="/tags/Fight/" style="font-size: 10px;">Fight</a> <a href="/tags/Injury/" style="font-size: 10px;">Injury</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Python学习/" style="font-size: 10px;">Python学习</a> <a href="/tags/Shocking/" style="font-size: 10px;">Shocking</a> <a href="/tags/Study/" style="font-size: 10px;">Study</a> <a href="/tags/主题测试/" style="font-size: 12.5px;">主题测试</a> <a href="/tags/机器学习/" style="font-size: 15px;">机器学习</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/随想/" style="font-size: 17.5px;">随想</a>
         </div>
     </div>
 

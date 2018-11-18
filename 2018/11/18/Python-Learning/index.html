@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8" />
+
+    
+
+    
+    <title>Python_Learning | Matrix</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Python" />
+    
+    <meta name="description" content="《Python编程从入门到实践》——【美】Eric Matthes 著 袁国忠 译 由于Python2已经停止更新，所以尽量用Python3开始编程。">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python_Learning">
+<meta property="og:url" content="http://matrixgardener.github.io/2018/11/18/Python-Learning/index.html">
+<meta property="og:site_name" content="Matrix">
+<meta property="og:description" content="《Python编程从入门到实践》——【美】Eric Matthes 著 袁国忠 译 由于Python2已经停止更新，所以尽量用Python3开始编程。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-11-18T20:31:42.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python_Learning">
+<meta name="twitter:description" content="《Python编程从入门到实践》——【美】Eric Matthes 著 袁国忠 译 由于Python2已经停止更新，所以尽量用Python3开始编程。">
+    
+
+    
+        <link rel="alternate" href="https://www.zhihu.com/people/matrixgardener" title="Matrix" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+
+
+</head>
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">matrixgardener&#39;s blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/C/">C++</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/">Essay</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/Book/">Book</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/Finance/">Finance</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Essay/Philosophy/">Philosophy</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Peoplel/">Peoplel</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Python/">Python</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/">Sports</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/随想/">随想</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/随想/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/随笔/">随笔</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Python/">Python</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-Python-Learning" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Python_Learning
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/11/18/Python-Learning/" class="article-date">
+            <time datetime="2018-11-18T07:10:36.000Z" itemprop="datePublished">2018-11-18</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Python/">Python</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>《Python编程从入门到实践》——【美】Eric Matthes 著 袁国忠 译</p>
+<p>由于Python2已经停止更新，所以尽量用Python3开始编程。</p>
+<a id="more"></a>
+<h2 id="变量的命名和使用"><a href="#变量的命名和使用" class="headerlink" title="变量的命名和使用"></a>变量的命名和使用</h2><ul>
+<li>变量名只能包含字母、数字和下划线。变量名可以字母或下划线打头，但不能以数字打头，例如，可将变量命名为message_1，但不能将其命名为1_message。</li>
+<li>变量名不能包含空格，但可使用下划线来分隔其中的单词。例如，变量名greeting_message可行，但变量名greeting message会引发错误。</li>
+<li>不要将Python关键字和函数名用作变量名，即不要使用Python保留用于特殊用途的单词，如print （请参见附录A.4）。</li>
+<li>变量名应既简短又具有描述性。例如，name比n好，student_name比s_n好，name_length比length_of_persons_name好。</li>
+<li>慎用小写字母l和大写字母O，因为它们可能被人错看成数字1和0。</li>
+</ul>
+<p><strong>方法</strong>是Python可对数据执行的操作，每个方法跟着一对（），因为方法通常都需要额外的信息来完成其工作。例如：name.title( )就是首字母大写显示name，无论单词内部是否大写。name.upper( )/name.lower( )。删除空白：name.lstrip()和rstrip( )的方法（头尾）。</p>
+<p>注释：</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bicycles = [<span class="string">'trek'</span>, <span class="string">'cannondale'</span>, <span class="string">'redline'</span>, <span class="string">'specialized'</span>]</span><br></pre></td></tr></table></figure>
+<p>列表是有序集合，访问列表的任何元素，只需该元素的位置或索引，并将其放在方括号内。（索引从0开始），为访问最后一个元素提供-1的索引。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bicycles[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<p>同样可以调用字符串功能。</p>
+<p><strong>修改：</strong>直接索引位置修改。</p>
+<p><strong>添加：</strong></p>
+<ol>
+<li>append()添加到末尾。</li>
+<li>insert()添加到索引之前。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">motorcycles = [<span class="string">'honda'</span>, <span class="string">'yamaha'</span>, <span class="string">'suzuki'</span>]</span><br><span class="line">motorcycles.insert(<span class="number">1</span>, <span class="string">'ducati'</span>)</span><br><span class="line">print(motorcycles)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>[&#39;honda&#39;, &#39;ducati&#39;, &#39;yamaha&#39;, &#39;suzuki&#39;]</code></p>
+<p><strong>删除：</strong></p>
+<ol>
+<li>del name[0]</li>
+<li>pop()：方法pop() 可删除列表末尾的元素，并让你能够接着使用它。术语弹出 （pop）源自这样的类比：列表就像一个栈，而删除列表末尾的元素相当于弹出栈顶元素。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">motorcycles = [<span class="string">'honda'</span>, <span class="string">'yamaha'</span>, <span class="string">'suzuki'</span>]</span><br><span class="line">popped_motorcycle = motorcycles.pop()</span><br><span class="line">print(motorcycles)</span><br><span class="line">print(popped_motorcycle)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>[&#39;honda&#39;, &#39;yamaha&#39;, &#39;suzuki&#39;]</code><br><code>[&#39;honda&#39;, &#39;yamaha&#39;]</code><br><code>suzuki</code></p>
+<p>实际pop()可以来删除列表中任何位置的元素，需在括号中指定元素的索引。</p>
+<ol>
+<li>根据删除的元素的值，可使用方法remove() 。使用remove() 从列表中删除元素时，也可接着使用它的值。方法remove() 只删除第一个指定的值。如果要删除的值可能在列表中出现多次，就需要使用循环来判断是否删除了所有这样的值。</li>
+</ol>
+<p><strong>组织列表</strong></p>
+<ul>
+<li>sort()对列表进行永久排序</li>
+<li>sorted()对列表进行临时排序<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cars = [<span class="string">'bmw'</span>, <span class="string">'audi'</span>, <span class="string">'toyota'</span>, <span class="string">'subaru'</span>]</span><br><span class="line">print(<span class="string">"Here is the original list:"</span>,<span class="string">"     "</span>,cars)</span><br><span class="line">print(<span class="string">"Here is the sorted() list:"</span>,<span class="string">"     "</span>,sorted(cars))</span><br><span class="line">print(<span class="string">"Here is the original list again:"</span>,cars)</span><br><span class="line">cars.sort()</span><br><span class="line">print(<span class="string">"Here is the sort() list again:"</span>,<span class="string">" "</span>,cars)</span><br><span class="line">print(<span class="string">"Here is the original list again:"</span>,cars)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>Here is the original list:       [&#39;bmw&#39;, &#39;audi&#39;, &#39;toyota&#39;, &#39;subaru&#39;]</code><br><code>Here is the sorted() list:       [&#39;audi&#39;, &#39;bmw&#39;, &#39;subaru&#39;, &#39;toyota&#39;]</code><br><code>Here is the original list again: [&#39;bmw&#39;, &#39;audi&#39;, &#39;toyota&#39;, &#39;subaru&#39;]</code><br><code>Here is the sort() list again:   [&#39;audi&#39;, &#39;bmw&#39;, &#39;subaru&#39;, &#39;toyota&#39;]</code><br><code>Here is the original list again: [&#39;audi&#39;, &#39;bmw&#39;, &#39;subaru&#39;, &#39;toyota&#39;]</code></p>
+<p><strong>倒序打印：</strong>reverse()</p>
+<p><strong>确定列表长度：</strong>len()</p>
+<h2 id="操作列表"><a href="#操作列表" class="headerlink" title="操作列表"></a>操作列表</h2><p><strong>遍历整个列表：</strong>for i in X:</p>
+<p><em>i 的选择</em>：编写for 循环时，对于用于存储列表中每个值的临时变量，可指定任何名称。然而，选择描述单个列表元素的有意义的名称大有帮助。</p>
+<p>for循环用法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">magicians = [<span class="string">'alice'</span>, <span class="string">'david'</span>, <span class="string">'carolina'</span>]</span><br><span class="line"><span class="keyword">for</span> magician <span class="keyword">in</span> magicians:</span><br><span class="line">    print(magician.title() + <span class="string">", that was a great trick!"</span>)</span><br><span class="line">    print(<span class="string">"I can't wait to see your next trick, "</span> + magician.title() + <span class="string">".\n"</span>)</span><br></pre></td></tr></table></figure></p>
+<p><code>Alice, that was a great trick!</code><br><code>I can&#39;t wait to see your next trick, Alice.</code></p>
+<p><code>David, that was a great trick!</code><br><code>I can&#39;t wait to see your next trick, David.</code><br><code>`
+</code>Carolina, that was a great trick!<code>`I can&#39;t wait to see your next trick, Carolina.</code></p>
+<p><strong>创建数字列表</strong><br>range()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>):</span><br><span class="line">	print(value)</span><br></pre></td></tr></table></figure>
+<p><code>1</code><br><code>2</code><br><code>3</code><br><code>4</code><br>函数range() 让Python从你指定的第一个值开始数，并在到达你指定的第二个值后停止，因此输出不包含第二个值（这里为5）。</p>
+<p>range(2,11,2)：函数range() 从2开始数，然后不断地加2，直到达到或超过终值（11），</p>
+<p>list(range(x,y))创建数字列表</p>
+<p><strong>使用列表的一部分</strong></p>
+<p><strong>切片</strong></p>
+<ul>
+<li>要创建切片，可指定要使用的第一个元素和最后一个元素的索引[X:Y]。与函数range() 一样，Python在到达你指定的第二个索引前面的元素后停止。</li>
+<li>如果你没有指定第一个索引，Python将自动从列表开头开始：</li>
+<li>要让切片终止于列表末尾，也可使用类似的语法。</li>
+<li>负数索引返回离列表末尾相应距离的元素，因此你可以输出列表末尾的任何切片。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">players = [<span class="string">'charles'</span>, <span class="string">'martina'</span>, <span class="string">'michael'</span>, <span class="string">'florence'</span>, <span class="string">'eli'</span>]</span><br><span class="line">print(players[<span class="number">0</span>:<span class="number">3</span>])</span><br><span class="line">print(players[<span class="number">1</span>:<span class="number">4</span>])</span><br><span class="line">print(players[:<span class="number">4</span>])</span><br><span class="line">print(players[<span class="number">2</span>:])</span><br><span class="line">print(players[<span class="number">-3</span>:])</span><br></pre></td></tr></table></figure>
+<p><code>[&#39;charles&#39;, &#39;martina&#39;, &#39;michael&#39;]</code><br><code>[&#39;martina&#39;, &#39;michael&#39;, &#39;florence&#39;]</code><br><code>[&#39;charles&#39;, &#39;martina&#39;, &#39;michael&#39;, &#39;florence&#39;]</code><br><code>[&#39;michael&#39;, &#39;florence&#39;, &#39;eli&#39;]</code><br><code>[&#39;michael&#39;, &#39;florence&#39;, &#39;eli&#39;]</code></p>
+<p><strong>遍历切片</strong> for X in rang[:3]</p>
+<p><strong>复制列表</strong><br>创建一个包含整个列表的切片（是同时省略起始索引和终止索引（[:] ），创建一个始于第一个元素，终止于最后一个元素的切片，即复制整个列表。）</p>
+<p><em>简单地将my_foods 赋给friend_foods ，就不能得到两个列表</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">my_foods = [<span class="string">'pizza'</span>, <span class="string">'falafel'</span>, <span class="string">'carrot cake'</span>]</span><br><span class="line"></span><br><span class="line">friend_foods = my_foods[:]</span><br><span class="line">my_foods.append(<span class="string">'cannoli'</span>)</span><br><span class="line">friend_foods.append(<span class="string">'ice cream'</span>)</span><br><span class="line">print(<span class="string">"My favorite foods are:"</span>)</span><br><span class="line">print(my_foods)</span><br><span class="line">print(<span class="string">"My friend's favorite foods are:"</span>)</span><br><span class="line">print(friend_foods,<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这行不通</span></span><br><span class="line">friend_foods = my_foods</span><br><span class="line">my_foods.append(<span class="string">'cannoli'</span>)</span><br><span class="line">friend_foods.append(<span class="string">'ice cream'</span>)</span><br><span class="line">print(<span class="string">"My favorite foods are:"</span>)</span><br><span class="line">print(my_foods)</span><br><span class="line">print(<span class="string">"My friend's favorite foods are:"</span>)</span><br><span class="line">print(friend_foods)</span><br></pre></td></tr></table></figure>
+<p><code>My favorite foods are:</code><br><code>[&#39;pizza&#39;, &#39;falafel&#39;, &#39;carrot cake&#39;, &#39;cannoli&#39;]</code><br><code>My friend&#39;s favorite foods are:</code><br><code>[&#39;pizza&#39;, &#39;falafel&#39;, &#39;carrot cake&#39;, &#39;ice cream&#39;]</code></p>
+<p><code>My favorite foods are:</code><br><code>[&#39;pizza&#39;, &#39;falafel&#39;, &#39;carrot cake&#39;, &#39;cannoli&#39;, &#39;cannoli&#39;, &#39;ice cream&#39;]</code><br><code>My friend&#39;s favorite foods are:</code><br><code>[&#39;pizza&#39;, &#39;falafel&#39;, &#39;carrot cake&#39;, &#39;cannoli&#39;, &#39;cannoli&#39;, &#39;ice cream&#39;]</code></p>
+<p><strong>元祖</strong></p>
+<p>列表非常适合用于存储在程序运行期间可能变化的数据集。列表是可以修改的，这对处理网站的用户列表或游戏中的角色列表至关重要。然而，有时候你需要创建一系列不可修改的元素，元组可以满足这种需求。Python将不能修改的值称为不可变的 ，而不可变的列表被称为<strong>元组</strong> 。</p>
+<p>元组看起来犹如列表，但使用圆括号而不是方括号来标识。</p>
+<p>dimensions = (200, 50)</p>
+<p><strong>修改元组变量</strong></p>
+<p>虽然不能修改元组的元素，但可以给存储元组的变量赋值。因此，如果要修改前述矩形的尺寸，可重新定义整个元组：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dimensions = (<span class="number">200</span>, <span class="number">50</span>)</span><br><span class="line">print(<span class="string">"Original dimensions:"</span>)</span><br><span class="line"><span class="keyword">for</span> dimension <span class="keyword">in</span> dimensions:</span><br><span class="line">    print(dimension)</span><br><span class="line">dimensions = (<span class="number">400</span>, <span class="number">100</span>)</span><br><span class="line">print(<span class="string">"\nModified dimensions:"</span>)</span><br><span class="line"><span class="keyword">for</span> dimension <span class="keyword">in</span> dimensions:</span><br><span class="line">    print(dimension)</span><br></pre></td></tr></table></figure>
+<p><code>Original dimensions:</code><br><code>200</code><br><code>50</code></p>
+<p><code>Modified dimensions:</code><br><code>400</code><br><code>100</code></p>
+<p><strong>格式设置指南</strong></p>
+<p>若要提出Python语言修改建议，需要编写Python改进提案 （Python Enhancement Proposal，PEP）。PEP 8是最古老的PEP之一，它向Python程序员提供了代码格式设置指南。PEP 8的篇幅很长，但大都与复杂的编码结构相关。<br><a href="https://www.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">PEP 8</a></p>
+<h2 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h2><p>每条if 语句的核心都是一个值为True 或False 的表达式，这种表达式被称为<strong>条件测试</strong>。</p>
+<ul>
+<li>检查是否相等</li>
+<li>检查是否相等时考虑大小写，若想忽略大小写合理运用X.lower()</li>
+<li>检查是否不相等！=</li>
+<li>比较数字</li>
+<li>检查多个条件 X&gt;2 and/or Y&lt;4</li>
+<li>检查特定值是否包含在列表中 in </li>
+<li>检查特定值是否不包含在列表中 not in </li>
+<li>布尔表达式</li>
+</ul>
+<p><strong>简单if语句</strong></p>
+<p><strong>if-elae语句</strong></p>
+<p><strong>iif-elif-else语句</strong></p>
+<p><strong>使用多个elif语句</strong></p>
+<p><strong>省略else语句</strong></p>
+<p><strong>测试多个条件</strong></p>
+<p><strong>使用if语句处理列表</strong></p>
+<p><strong>使用多个列表</strong></p>
+<p><strong>设置if 语句的格式</strong></p>
+<p>在条件测试的格式设置方面，PEP 8提供的唯一建议是，在诸如== 、&gt;= 和&lt;= 等比较运算符两边各添加一个空格，例如，if age &lt; 4: 要比if age&lt;4: 好。这样的空格不会影响Python对代码的解读，而只是让代码阅读起来更容易。</p>
+<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p>在Python中，字典 是一系列<strong>键—值</strong>对 。每个<strong>键</strong>都与一个值相关联，你可以使用键来访问与之相关联的值。与键相关联的值可以是数字、字符串、列表乃至字典。事实上，可将任何Python对象用作字典中的值。</p>
+<p>在Python中，字典用放在花括号{ } 中的一系列键—值对表示，如前面的示例所示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>键—值</strong>对是两个相关联的值。指定键时，Python将返回与之相关联的值。键和值之间用冒号分隔，而键—值对之间用逗号分隔。</p>
+<p><strong>访问字典中的值</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>&#125;</span><br><span class="line">print(alien_0[<span class="string">'color'</span>])</span><br></pre></td></tr></table></figure></p>
+<p><code>green</code></p>
+<p><strong>添加键值对</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125;</span><br><span class="line">print(alien_0)</span><br><span class="line">alien_0[<span class="string">'x_position'</span>] = <span class="number">0</span></span><br><span class="line">alien_0[<span class="string">'y_position'</span>] = <span class="number">25</span></span><br><span class="line">print(alien_0)</span><br></pre></td></tr></table></figure></p>
+<p><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5}</code><br><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5, &#39;x_position&#39;: 0, &#39;y_position&#39;: 25}</code></p>
+<p><strong>创建一个空字典</strong></p>
+<p><strong>修改字典中的值</strong></p>
+<p>要修改字典中的值，可依次指定字典名、用方括号括起的键以及与该键相关联的新值。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>&#125;</span><br><span class="line">print(<span class="string">"The alien is "</span> + alien_0[<span class="string">'color'</span>] + <span class="string">"."</span>)</span><br><span class="line">alien_0[<span class="string">'color'</span>] = <span class="string">'yellow'</span></span><br><span class="line">print(<span class="string">"The alien is now "</span> + alien_0[<span class="string">'color'</span>] + <span class="string">"."</span>)</span><br></pre></td></tr></table></figure></p>
+<p><code>The alien is green.</code><br><code>The alien is now yellow.</code></p>
+<p>例程：对一个能够以不同速度移动的外星人的位置进行跟踪。为此，我们将存储该外星人的当前速度，并据此确定该外星人将向右移动多远：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'x_position'</span>: <span class="number">0</span>, <span class="string">'y_position'</span>: <span class="number">25</span>, <span class="string">'speed'</span>: <span class="string">'medium'</span>&#125;</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Original x-position: "</span> + str(alien_0[<span class="string">'x_position'</span>]))</span><br><span class="line"><span class="comment"># 向右移动外星人</span></span><br><span class="line"><span class="comment"># 据外星人当前速度决定将其移动多远</span></span><br><span class="line"><span class="keyword">if</span> alien_0[<span class="string">'speed'</span>] == <span class="string">'slow'</span>:</span><br><span class="line">    x_increment = <span class="number">1</span></span><br><span class="line"><span class="keyword">elif</span> alien_0[<span class="string">'speed'</span>] == <span class="string">'medium'</span>:</span><br><span class="line">    x_increment = <span class="number">2</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line"><span class="comment"># 这个外星人的速度一定很快</span></span><br><span class="line">    x_increment = <span class="number">3</span></span><br><span class="line"><span class="comment"># 新位置等于老位置加上增量</span></span><br><span class="line">alien_0[<span class="string">'x_position'</span>] = alien_0[<span class="string">'x_position'</span>] + x_increment</span><br><span class="line">print(<span class="string">"New x-position: "</span> + str(alien_0[<span class="string">'x_position'</span>]))</span><br></pre></td></tr></table></figure>
+<p><code>Original x-position: 0</code><br><code>New x-position: 2</code></p>
+<p><strong>删除键-值对</strong></p>
+<p>对于字典中不再需要的信息，可使用del 语句将相应的键—值对彻底删除。使用del 语句时，必须指定字典名和要删除的键。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125;</span><br><span class="line">print(alien_0)</span><br><span class="line"><span class="keyword">del</span> alien_0[<span class="string">'points'</span>]</span><br><span class="line">print(alien_0)</span><br></pre></td></tr></table></figure></p>
+<p><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5}</code><br><code>{&#39;color&#39;: &#39;green&#39;}</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">favorite_languages = &#123;</span><br><span class="line">    <span class="string">'jen'</span>: <span class="string">'python'</span>,</span><br><span class="line">    <span class="string">'sarah'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'edward'</span>: <span class="string">'ruby'</span>,</span><br><span class="line">    <span class="string">'phil'</span>: <span class="string">'python'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">print(<span class="string">"Sarah's favorite language is "</span> +</span><br><span class="line">    favorite_languages[<span class="string">'sarah'</span>].title() +</span><br><span class="line">     <span class="string">"."</span>)</span><br></pre></td></tr></table></figure>
+<p><code>Sarah&#39;s favorite language is C.</code></p>
+<p><strong>遍历字典</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">user_0 = &#123;</span><br><span class="line">    <span class="string">'username'</span>: <span class="string">'efermi'</span>,</span><br><span class="line">    <span class="string">'first'</span>: <span class="string">'enrico'</span>,</span><br><span class="line">    <span class="string">'last'</span>: <span class="string">'fermi'</span>,</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> user_0.items():</span><br><span class="line">    print(<span class="string">"\nKey: "</span> + key)</span><br><span class="line">    print(<span class="string">"Value: "</span> + value)</span><br></pre></td></tr></table></figure></p>
+<p><code>Key: username</code><br><code>Value: efermi</code></p>
+<p><code>Key: first</code><br><code>Value: enrico</code></p>
+<p><code>Key: last</code><br><code>Value: fermi</code></p>
+<p>要编写用于遍历字典的for 循环，可声明两个变量，用于存储键—值对中的键和值。对于这两个变量，可使用任何名称。下面的代码使用了简单的变量名，<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> user_0.items()</span><br></pre></td></tr></table></figure></p>
+<p>注意，即便遍历字典时，键—值对的返回顺序也与存储顺序不同。Python不关心键—值对的存储顺序，而只跟踪键和值之间的关联关系。</p>
+<p><strong>遍历字典中的所有键</strong></p>
+<p>在不需要使用字典中的值时，方法keys() 很有用。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">favorite_languages = &#123;</span><br><span class="line">    <span class="string">'jen'</span>: <span class="string">'python'</span>,</span><br><span class="line">    <span class="string">'sarah'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'edward'</span>: <span class="string">'ruby'</span>,</span><br><span class="line">    <span class="string">'phil'</span>: <span class="string">'python'</span>,</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> favorite_languages.keys():</span><br><span class="line">    print(name.title())</span><br></pre></td></tr></table></figure></p>
+<p><code>Jen</code><br><code>Sarah</code><br><code>Edward</code><br><code>Phil</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">favorite_languages = &#123;</span><br><span class="line">    <span class="string">'jen'</span>: <span class="string">'python'</span>,</span><br><span class="line">    <span class="string">'sarah'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'edward'</span>: <span class="string">'ruby'</span>,</span><br><span class="line">    <span class="string">'phil'</span>: <span class="string">'python'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">friends = [<span class="string">'phil'</span>, <span class="string">'sarah'</span>]</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> favorite_languages.keys():</span><br><span class="line">    print(name.title())</span><br><span class="line">    <span class="keyword">if</span> name <span class="keyword">in</span> friends:</span><br><span class="line">        print(<span class="string">" Hi "</span> + name.title() +</span><br><span class="line">                <span class="string">", I see your favorite language is "</span> +</span><br><span class="line">                favorite_languages[name].title() + <span class="string">"!"</span>)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="string">'erin'</span> <span class="keyword">not</span> <span class="keyword">in</span> favorite_languages.keys():</span><br><span class="line">    print(<span class="string">"Erin, please take our poll!"</span>)</span><br></pre></td></tr></table></figure>
+<p><code>Jen</code><br><code>Sarah</code><br><code>Hi Sarah, I see your favorite language is C!</code><br><code>Edward</code><br><code>Phil</code><br><code>Hi Phil, I see your favorite language is Python!</code></p>
+<p><code>Erin, please take our poll!</code></p>
+<p><strong>按顺序遍历字典中的所有键</strong></p>
+<p>在for 循环中对返回的键进行排序。为此，可使用函数sorted() 来获得按特定顺序排列的键列表的副本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">favorite_languages = &#123;</span><br><span class="line">    <span class="string">'jen'</span>: <span class="string">'python'</span>,</span><br><span class="line">    <span class="string">'sarah'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'edward'</span>: <span class="string">'ruby'</span>,</span><br><span class="line">    <span class="string">'phil'</span>: <span class="string">'python'</span>,</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> sorted(favorite_languages.keys()):</span><br><span class="line">    print(name.title() + <span class="string">", thank you for taking the poll."</span>)</span><br></pre></td></tr></table></figure></p>
+<p><code>Edward, thank you for taking the poll.</code><br><code>Jen, thank you for taking the poll.</code><br><code>Phil, thank you for taking the poll.</code><br><code>Sarah, thank you for taking the poll.</code></p>
+<p><strong>遍历字典中的所有值</strong><br>字典包含的值，可使用方法values() ，它返回一个值列表，而不包含任何键。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">favorite_languages = &#123;</span><br><span class="line">    <span class="string">'jen'</span>: <span class="string">'python'</span>,</span><br><span class="line">    <span class="string">'sarah'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'edward'</span>: <span class="string">'ruby'</span>,</span><br><span class="line">    <span class="string">'phil'</span>: <span class="string">'python'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">print(<span class="string">"The following languages have been mentioned:"</span>)</span><br><span class="line"><span class="keyword">for</span> language <span class="keyword">in</span> favorite_languages.values():</span><br><span class="line">    print(language.title())</span><br></pre></td></tr></table></figure></p>
+<p><code>The following languages have been mentioned:</code><br><code>Python</code><br><code>C</code><br><code>Ruby</code><br><code>Python</code></p>
+<p>这种做法提取字典中所有的值，而没有考虑是否重复。涉及的值很少时，这也许不是问题，但如果被调查者很多，最终的列表可能包含大量的重复项。为剔除重复项，可使用<strong>集合（set）</strong>。<strong>集合</strong>类似于列表，但每个元素都必须是独一无二的：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">favorite_languages = &#123;</span><br><span class="line">    <span class="string">'jen'</span>: <span class="string">'python'</span>,</span><br><span class="line">    <span class="string">'sarah'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'edward'</span>: <span class="string">'ruby'</span>,</span><br><span class="line">    <span class="string">'phil'</span>: <span class="string">'python'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">print(<span class="string">"The following languages have been mentioned:"</span>)</span><br><span class="line"><span class="keyword">for</span> language <span class="keyword">in</span> set(favorite_languages.values()):</span><br><span class="line">    print(language.title())</span><br></pre></td></tr></table></figure></p>
+<p><code>The following languages have been mentioned:</code><br><code>Ruby</code><br><code>C</code><br><code>Python</code></p>
+<p><strong>嵌套</strong><br>需要将一系列字典存储在列表中，或将列表作为值存储在字典中，这称为<strong>嵌套</strong> 。</p>
+<p><strong>字典列表</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alien_0 = &#123;<span class="string">'color'</span>: <span class="string">'green'</span>, <span class="string">'points'</span>: <span class="number">5</span>&#125;</span><br><span class="line">alien_1 = &#123;<span class="string">'color'</span>: <span class="string">'yellow'</span>, <span class="string">'points'</span>: <span class="number">10</span>&#125;</span><br><span class="line">alien_2 = &#123;<span class="string">'color'</span>: <span class="string">'red'</span>, <span class="string">'points'</span>: <span class="number">15</span>&#125;</span><br><span class="line">aliens = [alien_0, alien_1, alien_2]</span><br><span class="line"><span class="keyword">for</span> alien <span class="keyword">in</span> aliens:</span><br><span class="line">    print(alien)</span><br></pre></td></tr></table></figure></p>
+<p><code>{&#39;color&#39;: &#39;green&#39;, &#39;points&#39;: 5}</code><br><code>{&#39;color&#39;: &#39;yellow&#39;, &#39;points&#39;: 10}</code><br><code>{&#39;color&#39;: &#39;red&#39;, &#39;points&#39;: 15}</code></p>
+<p><strong>在字典中存储列表</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 存储所点比萨的信息</span></span><br><span class="line">pizza = &#123;</span><br><span class="line">    <span class="string">'crust'</span>: <span class="string">'thick'</span>,</span><br><span class="line">    <span class="string">'toppings'</span>: [<span class="string">'mushrooms'</span>, <span class="string">'extra cheese'</span>],</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment"># 概述所点的比萨</span></span><br><span class="line">print(<span class="string">"You ordered a "</span> + pizza[<span class="string">'crust'</span>] + <span class="string">"-crust pizza "</span> +</span><br><span class="line">        <span class="string">"with the following toppings:"</span>)</span><br><span class="line"><span class="keyword">for</span> topping <span class="keyword">in</span> pizza[<span class="string">'toppings'</span>]:</span><br><span class="line">    print(<span class="string">"\t"</span> + topping)</span><br></pre></td></tr></table></figure></p>
+<p><code>You ordered a thick-crust pizza with the following toppings:</code><br><code>mushrooms</code><br><code>extra cheese</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">favorite_languages = &#123;</span><br><span class="line">    <span class="string">'jen'</span>: [<span class="string">'python'</span>, <span class="string">'ruby'</span>],</span><br><span class="line">    <span class="string">'sarah'</span>: [<span class="string">'c'</span>],</span><br><span class="line">    <span class="string">'edward'</span>: [<span class="string">'ruby'</span>, <span class="string">'go'</span>],</span><br><span class="line">    <span class="string">'phil'</span>: [<span class="string">'python'</span>, <span class="string">'haskell'</span>],</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">for</span> name, languages <span class="keyword">in</span> favorite_languages.items():</span><br><span class="line">    print(<span class="string">"\n"</span> + name.title() + <span class="string">"'s favorite languages are:"</span>)</span><br><span class="line">    <span class="keyword">for</span> language <span class="keyword">in</span> languages:</span><br><span class="line">        print(<span class="string">"\t"</span> + language.title())</span><br></pre></td></tr></table></figure>
+<p><code>Jen&#39;s favorite languages are:</code><br><code>​    Python</code><br><code>​    Ruby</code></p>
+<p><code>Sarah&#39;s favorite languages are:</code><br><code>​    C</code></p>
+<p><code>Edward&#39;s favorite languages are:</code><br><code>​    Ruby</code><br><code>​    Go</code></p>
+<p><code>Phil&#39;s favorite languages are:</code><br><code>​    Python</code><br><code>​    Haskell</code></p>
+<p><strong>在字典中存储字典</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">users = &#123;</span><br><span class="line">    <span class="string">'aeinstein'</span>: &#123;</span><br><span class="line">        <span class="string">'first'</span>: <span class="string">'albert'</span>,</span><br><span class="line">        <span class="string">'last'</span>: <span class="string">'einstein'</span>,</span><br><span class="line">        <span class="string">'location'</span>: <span class="string">'princeton'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">    <span class="string">'mcurie'</span>: &#123;</span><br><span class="line">        <span class="string">'first'</span>: <span class="string">'marie'</span>,</span><br><span class="line">        <span class="string">'last'</span>: <span class="string">'curie'</span>,</span><br><span class="line">        <span class="string">'location'</span>: <span class="string">'paris'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> username, user_info <span class="keyword">in</span> users.items():</span><br><span class="line">    print(<span class="string">"\nUsername: "</span> + username)</span><br><span class="line">    full_name = user_info[<span class="string">'first'</span>] + <span class="string">" "</span> + user_info[<span class="string">'last'</span>]</span><br><span class="line">    location = user_info[<span class="string">'location'</span>]</span><br><span class="line">    print(<span class="string">"\tFull name: "</span> + full_name.title())</span><br><span class="line">    print(<span class="string">"\tLocation: "</span> + location.title())</span><br></pre></td></tr></table></figure></p>
+<p><code>Username: aeinstein</code><br>​    <code>Full name: Albert Einstein</code><br>​    <code>Location: Princeton</code></p>
+<p><code>Username: mcurie</code><br>​    <code>Full name: Marie Curie</code><br>​    <code>Location: Paris</code></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://matrixgardener.github.io/2018/11/18/Python-Learning/" data-id="cjoncarss002dwkpocc8y1ppq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/matrixgardener" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="paw" href="httpS://baidu.com" target="_blank" rel="noopener">
+                        <i class="icon fa fa-paw"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="zhihu" href="https://www.zhihu.com/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-zhihu"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="https://www.zhihu.com/people/matrixgardener" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/11/10/Python之禅/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Python之禅</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/18/Python-Learning/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2018/11/18/Python-Learning/" class="title">Python_Learning</a></p>
+                            <p class="item-date"><time datetime="2018-11-18T07:10:36.000Z" itemprop="datePublished">2018-11-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/10/Python之禅/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Python/">Python</a></p>
+                            <p class="item-title"><a href="/2018/11/10/Python之禅/" class="title">Python之禅</a></p>
+                            <p class="item-date"><time datetime="2018-11-10T09:06:10.000Z" itemprop="datePublished">2018-11-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/06/C++&& MFC Research/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/C/">C++</a></p>
+                            <p class="item-title"><a href="/2018/11/06/C++&& MFC Research/" class="title">C++ &amp;&amp; MFC Research</a></p>
+                            <p class="item-date"><time datetime="2018-11-06T03:04:27.000Z" itemprop="datePublished">2018-11-06</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/04/极简欧洲史/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/极简欧洲史.jpg)" alt="极简欧洲史" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/随想/">随想</a></p>
+                            <p class="item-title"><a href="/2018/10/04/极简欧洲史/" class="title">极简欧洲史</a></p>
+                            <p class="item-date"><time datetime="2018-10-04T09:24:46.000Z" itemprop="datePublished">2018-10-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/25/活出生命的意义/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/image/活出生命的意义.jpg)" alt="活出生命的意义" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
+                            <p class="item-title"><a href="/2018/08/25/活出生命的意义/" class="title">活出生命的意义</a></p>
+                            <p class="item-date"><time datetime="2018-08-25T11:24:31.000Z" itemprop="datePublished">2018-08-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/">Essay</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Book/">Book</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Finance/">Finance</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essay/Philosophy/">Philosophy</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Peoplel/">Peoplel</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随想/">随想</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随想/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essay/">Essay</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Fight/">Fight</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Injury/">Injury</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python学习/">Python学习</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shocking/">Shocking</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Study/">Study</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/主题测试/">主题测试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/机器学习/">机器学习</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/读书笔记/">读书笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随想/">随想</a><span class="tag-list-count">7</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Essay/" style="font-size: 20px;">Essay</a> <a href="/tags/Fight/" style="font-size: 10px;">Fight</a> <a href="/tags/Injury/" style="font-size: 10px;">Injury</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/Python学习/" style="font-size: 10px;">Python学习</a> <a href="/tags/Shocking/" style="font-size: 10px;">Shocking</a> <a href="/tags/Study/" style="font-size: 10px;">Study</a> <a href="/tags/主题测试/" style="font-size: 12.5px;">主题测试</a> <a href="/tags/机器学习/" style="font-size: 15px;">机器学习</a> <a href="/tags/读书笔记/" style="font-size: 10px;">读书笔记</a> <a href="/tags/随想/" style="font-size: 17.5px;">随想</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 matrixgardener</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://matrixgardener.github.io/2018/11/18/Python-Learning/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"superSample":2,"width":120,"height":240,"position":"right","hOffset":-20,"vOffset":-40},"mobile":{"show":true,"scale":0.5,"motion":true},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+</html>
