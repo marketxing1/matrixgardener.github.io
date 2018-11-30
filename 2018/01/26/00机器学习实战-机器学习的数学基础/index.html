@@ -526,7 +526,7 @@ H_{k}^{-1} \cdot \left( g_{k+1} -g_{k} \right) =x_{k+1} -x_{k}</script><p>上面
 
 
 
-    <a data-url="http://matrixgardener.github.io/2018/01/26/00机器学习实战-机器学习的数学基础/" data-id="cjp4cpu4p003eyspo2o6d77a1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://matrixgardener.github.io/2018/01/26/00机器学习实战-机器学习的数学基础/" data-id="cjp4dgvtz003edspo5oj6g251" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -593,9 +593,8 @@ H_{k}^{-1} \cdot \left( g_{k+1} -g_{k} \right) =x_{k+1} -x_{k}</script><p>上面
     <section id="comments">
     
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+    <div id="valine-thread"></div>
+
 
     
     </section>
@@ -887,20 +886,22 @@ H_{k}^{-1} \cdot \left( g_{k+1} -g_{k} \right) =x_{k+1} -x_{k}</script><p>上面
 
         
     
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'http://matrixgardener.github.io/2018/01/26/00机器学习实战-机器学习的数学基础/';
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
+        new Valine({
+            el: '#valine-thread' ,
+            notify:false,
+            verify:false,
+            app_id: 'BRfiYs3XxyI9grscp9xo1gx8-gzGzoHsz',
+            app_key: 'p61Ej7RUunJnRKz7qEBcBFhN',
+            placeholder: 'Just Do It',
+            pageSize: '10',
+            avatar: 'identicon',
+            avatar_cdn:  'https://gravatar.loli.net/avatar/'
+        });
     </script>
+
 
 
 
